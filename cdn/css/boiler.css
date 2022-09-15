@@ -1,0 +1,111 @@
+/*BACKGROUND COLOR*/
+.background-color-1a73e8 {
+    background-color: #1a73e8;
+}
+
+/*BORDER*/
+@media screen {
+    .border-1px-solid {
+        border: 1px solid;
+    }
+
+    .border-bottom-1px-solid {
+        border-bottom: 1px solid;
+    }
+}
+
+/*BORDER COLOR*/
+@media screen {
+    .border-color-1a73e8 {
+        border-color: #1a73e8;    
+    }
+    
+    .border-color-dadce0 {
+        border-color: #dadce0;
+    }
+}
+
+/*COLOR*/
+@media screen {
+    .color-fff {
+        color: #fff;    
+    }
+    
+    .color-1a73e8 {
+        color: #1a73e8;
+    }
+    
+    .color-5f6368 {
+        color: #5f6368;
+    }
+}
+
+/*FONT SIZE*/
+@media screen {
+    .font-size-22px {
+        font-size: 22px;
+    }
+}
+
+/*FONT WEIGHT*/
+@media screen {
+    .font-weight-bolder {
+        font-weight: bolder;
+    }
+}
+
+/*HEIGHT*/
+@media screen {
+    .height-50px {
+        height: 50px;
+    }
+}
+
+/*LINE HEIGHT*/
+@media screen {
+    .line-height-50px {
+        line-height: 50px;
+    }
+}
+
+/*JUSTIFY CONTENT*/
+@media screen {
+    .justify-content-space-between {
+        justify-content: space-between;
+    }
+}
+
+/*MARGIN*/
+@media screen {
+    .margin-right-5px {
+        margin-right: 5px;
+    }
+    
+    .margin-right-10px {
+        margin-right: 10px;
+    }
+}
+
+/*PADDING*/
+@media screen {
+    .padding-10px {
+        padding: 10px;
+    }
+    
+    .padding-x-20px {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .padding-y-10px {
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+}
+
+/*WIDTH*/
+@media screen {
+    .width-100pct {
+        width: 100%;
+    }
+}

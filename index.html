@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Space &#8226;&#160;uiOS</title>
+        <meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0'>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+        <meta name='apple-mobile-web-app-capable' content='yes'>
+        <meta name='apple-mobile-web-app-status-bar-style' content='#021025'>
+        <meta name="apple-mobile-web-app-title" content="Space">
+        <meta name="application-name" content="Space">
+        <meta name="application-shortname" content="space">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name='theme-color' content='#021025'>
+        <script>
+            var domains = window.location.host.split('.');
+            window.globals = {
+                domains: {
+                    domain: domains.length > 1 ? domains[domains.length - 2] : null,
+                    subdomain: domains.length > 2 ? domains[domains.length - 3] : null,
+                    tld: domains[domains.length - 1]
+                }
+            }
+            const base = document.createElement("base");
+            base.href = (globals.domains.domain === "github" ? "/" + document.head.querySelector('[name="application-shortname"]').content : "") + "/";
+            document.head.appendChild(base);
+        </script>
+        <link href="index.css" rel="stylesheet">
+        <link href="cdn/css/gg.css" rel="stylesheet">
+        <link href="cdn/css/boiler.css" rel="stylesheet">
+        <script id="firebase-app" src="cdn/js/firebase-app.js"></script>
+        <script id="firebase-auth" src="cdn/js/firebase-auth.js"></script>
+        <script id="script-vanilla" src="cdn/js/vanilla.js"></script>
+        <script id="script-auth" src="cdn/js/auth.js"></script>
+        <script id="script-mvc" src="cdn/js/mvc.js"></script>
+        <script id="script-on" src="cdn/js/on.js"></script>
+        <script id="script-router" src="cdn/js/router.js"></script>
+        <script src="index.js"></script>
+    </head>
+    <body class="-dark-background-color-1f background-color-fff">
+        <boot id="boot"></boot>
+        <header class="padding-x-20px padding-y-10px">
+            <row class="justify-content-space-between width-100pct">
+                <card class="line-height-50px">
+                    <row>
+                        <box class="color-5f6368 font-size-22px font-weight-bolder">
+                            <row>
+                                <text class="margin-right-5px">uiOS</text>
+                                <text>Space</text>
+                            </row>
+                        </box>
+                    </row>
+                </card>
+                <card class="font-weight-bolder line-height-50px">
+                    <row>
+                        <box class="background-color-1a73e8 border-1px-solid border-color-1a73e8 color-fff margin-right-10px">
+                            <section>
+                                <text class="padding-x-20px">Upgrade</text>
+                            </section>
+                        </box>
+                        <box class="border-1px-solid border-color-1a73e8 color-1a73e8 height-50px">
+                            <section>
+                                <text class="padding-x-20px">Sign In</text>
+                            </section>
+                        </box>
+                    </row>
+                </card>
+            </row>
+        </header>
+    </body>
+</html>
