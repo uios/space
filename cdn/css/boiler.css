@@ -31,6 +31,13 @@
     }
 }
 
+/*BOTTOM*/
+@media screen {
+    .bottom-0 {
+        bottom: 0;
+    }
+}
+
 /*COLOR*/
 @media screen {
     .color-fff {
@@ -62,8 +69,19 @@
 
 /*HEIGHT*/
 @media screen {
+    .height-2px {
+        height: 2px;
+    }
+    
     .height-50px {
         height: 50px;
+    }
+}
+
+/*LEFT*/
+@media screen {
+    .left-0 {
+        left: 0;
     }
 }
 
@@ -110,6 +128,17 @@
     .padding-y-10px {
         padding-bottom: 10px;
         padding-top: 10px;
+    }
+}
+
+/*POSITION*/
+@media screen {
+    .position-absolute {
+        position: absolute;
+    }
+
+    .position-relative {
+        position: relative;
     }
 }
 
