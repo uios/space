@@ -1,6 +1,12 @@
 /*BACKGROUND COLOR*/
-.background-color-1a73e8 {
-    background-color: #1a73e8;
+@media screen {
+    .background-color-1a73e8 {
+        background-color: #1a73e8;
+    }
+
+    .background-color-fff {
+        background-color: #fff;
+    }
 }
 
 /*BORDER*/
@@ -17,9 +23,9 @@
 /*BORDER COLOR*/
 @media screen {
     .border-color-1a73e8 {
-        border-color: #1a73e8;    
+        border-color: #1a73e8;
     }
-    
+
     .border-color-dadce0 {
         border-color: #dadce0;
     }
@@ -28,13 +34,13 @@
 /*COLOR*/
 @media screen {
     .color-fff {
-        color: #fff;    
+        color: #fff;
     }
-    
+
     .color-1a73e8 {
         color: #1a73e8;
     }
-    
+
     .color-5f6368 {
         color: #5f6368;
     }
@@ -80,11 +86,11 @@
     .margin-right-5px {
         margin-right: 5px;
     }
-    
+
     .margin-right-10px {
         margin-right: 10px;
     }
-    
+
     .margin-right-20px {
         margin-right: 20px;
     }
@@ -95,12 +101,12 @@
     .padding-10px {
         padding: 10px;
     }
-    
+
     .padding-x-20px {
         padding-left: 20px;
         padding-right: 20px;
     }
-    
+
     .padding-y-10px {
         padding-bottom: 10px;
         padding-top: 10px;
