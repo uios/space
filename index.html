@@ -42,25 +42,26 @@
             <row class="justify-content-space-between width-100pct">
                 <card class="line-height-50px">
                     <row>
-                        <box class="color-5f6368 font-size-22px font-weight-bolder margin-right-20px">
+                        <box class="color-5f6368 font-size-22px font-weight-bolder margin-right-20px" data-href="/">
                             <row>
                                 <text class="margin-right-5px">uiOS</text>
                                 <text>Space</text>
                             </row>
                         </box>
-                        <box class="position-relative" data-href="/about/">
+                        <box class="-noauth position-relative" data-href="/about/">
                             <section>
                                 <text class="padding-x-20px">About</text>
+                                <picture class="background-color-1a73e8 bottom-0 height-2px left-0 position-absolute width-100pct" data-page="/"></picture>
                                 <picture class="background-color-1a73e8 bottom-0 height-2px left-0 position-absolute width-100pct" data-page="/about/"></picture>
                             </section>
                         </box>
-                        <box class="position-relative" data-href="/plans/">
+                        <box class="-noauth position-relative" data-href="/plans/">
                             <section>
                                 <text class="padding-x-20px">Plans</text>
                                 <picture class="background-color-1a73e8 bottom-0 height-2px left-0 position-absolute width-100pct" data-page="/plans/"></picture>
                             </section>
                         </box>
-                        <box class="position-relative" data-href="/faq/">
+                        <box class="-noauth position-relative" data-href="/faq/">
                             <section>
                                 <text class="padding-x-20px">FAQ</text>
                                 <picture class="background-color-1a73e8 bottom-0 height-2px left-0 position-absolute width-100pct" data-page="/faq/"></picture>
@@ -69,7 +70,7 @@
                     </row>
                 </card>
                 <card class="font-weight-bolder line-height-50px">
-                    <row>
+                    <row class="-noauth">
                         <box class="background-color-1a73e8 border-1px-solid border-color-1a73e8 color-fff margin-right-10px" data-href="/plans/">
                             <section>
                                 <text class="padding-x-20px">Upgrade</text>
@@ -78,6 +79,15 @@
                         <box class="border-1px-solid border-color-1a73e8 color-1a73e8 height-50px" data-href="/my/">
                             <section>
                                 <text class="padding-x-20px">Sign In</text>
+                            </section>
+                        </box>
+                    </row>
+                    <row class="-isauth">
+                        <box>
+                            <section>
+                                <picture>
+                                    <img>
+                                </picture>
                             </section>
                         </box>
                     </row>
