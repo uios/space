@@ -76,6 +76,10 @@
     .height-50px {
         height: 50px;
     }
+    
+    .height-100pct {
+        height: 100%;
+    }
 }
 
 /*LEFT*/
@@ -137,8 +141,19 @@
         position: absolute;
     }
 
+    .position-fixed {
+        position: fixed;
+    }
+
     .position-relative {
         position: relative;
+    }
+}
+
+/*TOP*/
+@media screen {
+    .top-0 {
+        top: 0;
     }
 }
 
@@ -146,5 +161,12 @@
 @media screen {
     .width-100pct {
         width: 100%;
+    }
+}
+
+/*Z-INDEX*/
+@media screen {
+    .z-index-9 {
+        z-index: 123456789;
     }
 }

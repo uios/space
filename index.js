@@ -26,6 +26,19 @@ window.onload = ()=>{
     init();
 }
 
+window.onpopstate = (event)=>{
+    if (event.state) {
+        var state = is.local(window.location.protocol) ? event.state.replace(/^#+/, '') : event.state;
+        state.router({
+            pop: true
+        });
+    } else {
+        if (document.location) {//console.log({place});
+        }
+    }
+    //console.log(event, "location: " + document.location + ", state: " + JSON.stringify(state));
+}
+
 function init() {
     console.log("Initializing...");
 
