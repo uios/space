@@ -4,6 +4,10 @@
         background-color: #1a73e8;
     }
 
+    .background-color-db {
+        background-color: #dbdbdb;
+    }
+
     .background-color-fff {
         background-color: #fff;
     }
@@ -28,6 +32,13 @@
 
     .border-color-dadce0 {
         border-color: #dadce0;
+    }
+}
+
+/*BORDER RADIUS*/
+@media screen {
+    .border-radius-50pct {
+        border-radius: 50%;
     }
 }
 
@@ -69,16 +80,27 @@
 
 /*HEIGHT*/
 @media screen {
+    .height-75pct {
+        height: 75%;
+    }
+
+    .height-100pct {
+        height: 100%;
+    }
+
     .height-2px {
         height: 2px;
     }
-    
-    .height-50px {
+
+    .height-50px, [data-height="50px"] {
         height: 50px;
     }
-    
-    .height-100pct {
-        height: 100%;
+}
+
+/*JUSTIFY CONTENT*/
+@media screen {
+    .justify-content-space-between {
+        justify-content: space-between;
     }
 }
 
@@ -96,15 +118,12 @@
     }
 }
 
-/*JUSTIFY CONTENT*/
-@media screen {
-    .justify-content-space-between {
-        justify-content: space-between;
-    }
-}
-
 /*MARGIN*/
 @media screen {
+    .margin-auto {
+        margin: auto;
+    }
+    
     .margin-right-5px {
         margin-right: 5px;
     }
@@ -115,6 +134,13 @@
 
     .margin-right-20px {
         margin-right: 20px;
+    }
+}
+
+/*OVERFLOW*/
+@media screen {
+    .overflow-hidden {
+        overflow: hidden;
     }
 }
 
@@ -150,6 +176,13 @@
     }
 }
 
+/*RIGHT*/
+@media screen {
+    .right-0 {
+        right: 0;
+    }
+}
+
 /*TOP*/
 @media screen {
     .top-0 {
@@ -159,8 +192,16 @@
 
 /*WIDTH*/
 @media screen {
+    .width-75pct {
+        width: 75%;
+    }
+
     .width-100pct {
         width: 100%;
+    }
+
+    .width-50px, [data-width="50px"] {
+        width: 50px;
     }
 }
 
