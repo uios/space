@@ -23,14 +23,25 @@ String.prototype.router = async function(params) {
             route = window.view ? await view(route).then(rout.ed.bang(route)) : await rout.ed.bang(route);
 
             if (!pop && !["blob:"].includes(window.location.protocol)) {
-                const hash = globals.domains.domain === "github" ? "/#" : "";
-                var goto = window.globals.domains.subdomain === "uios" ? '/'+document.head.querySelector('[name="application-shortname"]').content : '';
+                const hash = global.domains.domain === "github" ? "/#" : "";
+                var goto = window.global.domains.subdomain === "uios" ? '/' + document.head.querySelector('[name="application-shortname"]').content : '';
                 const link = hash.length > 0 ? goto + hash + (route.hash.length > 0 ? route.hash.split('#')[1] : route.path) + route.search : goto + route.path + route.search + route.hash;
+                if (window.self !== window.top) {
+                    if (window.globals.domains.domain === "github") {
+                        const got = window.parent.GET.slice(0, 3);
+                        const gut = route.GOT;
+                        const bash = got.concat(gut);
+                        const goin = (window.globals.domains.domain === "github" ? '/#' : '') + rout.ed.url(bash);
+                        window.parent.history.pushState(goin, '', goin);
+                    }
+                }
+                document.body.dataset.path = route.path;
                 console.log({
+                    path,
                     hash,
                     route,
                     link
-                }, route.hash.split('#')[1]);
+                });
                 history.pushState(link, '', link);
             }
 
