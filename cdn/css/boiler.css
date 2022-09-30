@@ -6,7 +6,7 @@
 }
 
 /*BACKGROUND COLOR*/
-@media screen {
+@media screen {    
     .background-color-1a73e8 {
         background-color: #1a73e8;
     }
@@ -17,6 +17,10 @@
 
     .background-color-fff {
         background-color: #fff;
+    }
+    
+    .background-color-ff3b30, [data-background-color="#ff3b30"] {
+        background-color: #ff3b30;
     }
 }
 
@@ -73,7 +77,7 @@
 
 /*COLOR*/
 @media screen {
-    .color-fff {
+    .color-fff, [data-color="#fff"] {
         color: #fff;
     }
 
@@ -144,6 +148,10 @@
         height: 2px;
     }
 
+    .height-40px {
+        height: 40px;
+    }
+
     .height-50px, [data-height="50px"] {
         height: 50px;
     }
@@ -180,6 +188,10 @@
         margin: auto;
     }
 
+    .margin-bottom-50px {
+        margin-bottom: 50px;
+    }
+
     .margin-left-10px {
         margin-left: 10px;
     }
@@ -204,6 +216,10 @@
         margin-right: auto;
     }
 
+    .margin-top-120px {
+        margin-top: 120px;
+    }
+
     .margin-x-10px {
         margin-left: 10px;
         margin-right: 10px;
@@ -212,6 +228,11 @@
     .margin-x-auto {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .margin-y-5px {
+        margin-bottom: 5px;
+        margin-top: 5px;
     }
 
     .margin-y-18px {
@@ -264,6 +285,11 @@
         padding-top: 70px;
     }
 
+    .padding-x-5px {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
     .padding-x-20px {
         padding-left: 20px;
         padding-right: 20px;
@@ -313,6 +339,10 @@
 
 /*WIDTH*/
 @media screen {
+    .width-50pct {
+        width: 50%;
+    }
+    
     .width-75pct {
         width: 75%;
     }
@@ -323,6 +353,10 @@
 
     .width-50px, [data-width="50px"] {
         width: 50px;
+    }
+
+    .width-160px {
+        width: 160px;
     }
 
     .width-256px {
