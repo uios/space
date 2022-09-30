@@ -1,0 +1,264 @@
+@media screen {
+    .gg-chevron-up-o {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        transform: scale(var(--ggs,1));
+        width: 22px;
+        height: 22px;
+        border: 2px solid;
+        border-radius: 100px
+    }
+
+    .gg-chevron-up-o::after {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-top: 2px solid;
+        border-right: 2px solid;
+        transform: rotate(-45deg);
+        left: 6px;
+        bottom: 5px
+    }
+}
+
+@media screen {
+    .gg-cloud {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        transform: scale(var(--ggs,1));
+        width: 8px;
+        height: 2px;
+        background: currentColor;
+        margin-bottom: -20px
+    }
+
+    .gg-cloud::after, .gg-cloud::before {
+        content: "";
+        display: block;
+        position: absolute;
+        border: 2px solid;
+        box-sizing: border-box;
+        bottom: 0
+    }
+
+    .gg-cloud::before {
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
+        border-right: 0;
+        left: -6px;
+        width: 7px;
+        height: 12px
+    }
+
+    .gg-cloud::after {
+        width: 16px;
+        height: 16px;
+        border-radius: 100px;
+        border-left-color: transparent;
+        right: -8px;
+        transform: rotate(-45deg)
+    }
+}
+
+@media screen {
+    .gg-dollar {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        transform: scale(var(--ggs,1));
+        width: 2px;
+        height: 20px;
+        background: currentColor
+    }
+
+    .gg-dollar::after, .gg-dollar::before {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        width: 10px;
+        height: 8px;
+        border: 2px solid
+    }
+
+    .gg-dollar::before {
+        border-right: 0;
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
+        top: 3px;
+        left: -6px;
+        box-shadow: 4px -2px 0 -2px
+    }
+
+    .gg-dollar::after {
+        border-left: 0;
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+        bottom: 3px;
+        right: -6px;
+        box-shadow: -4px 2px 0 -2px
+    }
+}
+
+@media screen {
+    .gg-heart, .gg-heart::after {
+        border: 2px solid;
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+        width: 10px;
+        height: 8px;
+        border-bottom: 0
+    }
+
+    .gg-heart {
+        box-sizing: border-box;
+        position: relative;
+        transform: translate( calc(-10px / 2 * var(--ggs,1)), calc(-6px / 2 * var(--ggs,1)) ) rotate(-45deg) scale(var(--ggs,1));
+        display: block
+    }
+
+    .gg-heart::after, .gg-heart::before {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute
+    }
+
+    .gg-heart::after {
+        right: -9px;
+        transform: rotate(90deg);
+        top: 5px
+    }
+
+    .gg-heart::before {
+        width: 11px;
+        height: 11px;
+        border-left: 2px solid;
+        border-bottom: 2px solid;
+        left: -2px;
+        top: 3px
+    }
+}
+
+@media screen {
+    .gg-home {
+        background: linear-gradient(to left, currentColor 5px,transparent 0) no-repeat 0 bottom/4px 2px, linear-gradient(to left, currentColor 5px,transparent 0) no-repeat right bottom/4px 2px;
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        transform: scale(var(--ggs,1));
+        width: 18px;
+        height: 14px;
+        border: 2px solid;
+        border-top: 0;
+        border-bottom: 0;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        margin-bottom: -2px
+    }
+
+    .gg-home::after, .gg-home::before {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute
+    }
+
+    .gg-home::before {
+        border-top: 2px solid;
+        border-left: 2px solid;
+        border-top-left-radius: 4px;
+        transform: rotate(45deg);
+        top: -5px;
+        border-radius: 3px;
+        width: 14px;
+        height: 14px;
+        left: 0
+    }
+
+    .gg-home::after {
+        width: 8px;
+        height: 10px;
+        border: 2px solid;
+        border-radius: 100px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: 0;
+        left: 3px;
+        bottom: 0
+    }
+}
+
+@media screen {
+    .gg-info {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        transform: scale(var(--ggs,1));
+        width: 20px;
+        height: 20px;
+        border: 2px solid;
+        border-radius: 40px
+    }
+
+    .gg-info::after, .gg-info::before {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        border-radius: 3px;
+        width: 2px;
+        background: currentColor;
+        left: 7px
+    }
+
+    .gg-info::after {
+        bottom: 2px;
+        height: 8px
+    }
+
+    .gg-info::before {
+        height: 2px;
+        top: 2px
+    }
+}
+
+@media screen {
+    .gg-options {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        transform: scale(var(--ggs,1));
+        width: 10px;
+        height: 2px;
+        box-shadow: -3px 4px 0 0, 3px -4px 0 0
+    }
+
+    .gg-options::after, .gg-options::before {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border: 2px solid;
+        border-radius: 100%
+    }
+
+    .gg-options::before {
+        top: -7px;
+        left: -4px
+    }
+
+    .gg-options::after {
+        bottom: -7px;
+        right: -4px
+    }
+}

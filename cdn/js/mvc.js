@@ -27,9 +27,17 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
 
             if (root === "about") {
                 resolve(route);
+            } else if (root === "benefits") {
+                resolve(route);
             } else if (root === "plans") {
                 resolve(route);
-            } else if (root === "faq") {
+            } else if (root === "help") {
+                resolve(route);
+            } else if (root === "settings") {
+                resolve(route);
+            } else if (root === "storage") {
+                resolve(route);
+            } else if (root === "support") {
                 resolve(route);
             } else {
                 resolve(route);
