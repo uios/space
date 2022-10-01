@@ -77,8 +77,8 @@
 
 /*COLOR*/
 @media screen {
-    .color-fff, [data-color="#fff"] {
-        color: #fff;
+    .color-000 {
+        color: #000;
     }
 
     .color-1a73e8 {
@@ -87,6 +87,13 @@
 
     .color-5f6368 {
         color: #5f6368;
+    }
+
+    .color-777 {
+        color: #777;
+    }
+    .color-fff, [data-color="#fff"] {
+        color: #fff;
     }
 }
 
@@ -122,8 +129,16 @@
         font-size: 22px;
     }
 
+    .font-size-24px {
+        font-size: 24px;
+    }
+
     .font-size-30px {
         font-size: 30px;
+    }
+
+    .font-size-48px {
+        font-size: 48px;
     }
 }
 
@@ -186,6 +201,10 @@
 @media screen {
     .margin-auto {
         margin: auto;
+    }
+
+    .margin-bottom-30px {
+        margin-bottom: 30px;
     }
 
     .margin-bottom-50px {
