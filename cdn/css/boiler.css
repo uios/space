@@ -7,12 +7,24 @@
 
 /*BACKGROUND COLOR*/
 @media screen {    
+    .background-color-0096c7 {
+        background-color: #0096c7;    
+    }
+    
     .background-color-1a73e8 {
         background-color: #1a73e8;
     }
 
+    .background-color-32cd32 {
+        background-color: #32cd32;
+    }
+
     .background-color-db {
         background-color: #dbdbdb;
+    }
+
+    .background-color-ff3b30 {
+        background-color: #ff3b30;
     }
 
     .background-color-fff {
@@ -170,6 +182,10 @@
     .height-50px, [data-height="50px"] {
         height: 50px;
     }
+
+    [data-height="calc(100% + 10px)"] {
+        height: calc(100% + 10px);
+    }
 }
 
 /*JUSTIFY CONTENT*/
@@ -280,6 +296,10 @@
         padding: 10px;
     }
 
+    .padding-20px {
+        padding: 20px;
+    }
+
     .padding-left-5px {
         padding-left: 5px;
     }
@@ -385,10 +405,18 @@
     .width-300px {
         width: 300px;
     }
+
+    [data-width="calc(100% + 10px)"] {
+        width: calc(100% + 10px);
+    }
 }
 
 /*Z-INDEX*/
 @media screen {
+    .z-index-1 {
+        z-index: 1;
+    }
+    
     .z-index-3 {
         z-index: 123;
     }
@@ -399,5 +427,9 @@
 
     .z-index-9 {
         z-index: 123456789;
+    }
+
+    [data-z-index="-1"] {
+        z-index: -1;
     }
 }
