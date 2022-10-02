@@ -243,6 +243,10 @@
         margin: auto;
     }
 
+    .margin-5px {
+        margin: 5px;
+    }
+
     .margin-10px {
         margin: 10px;
     }
