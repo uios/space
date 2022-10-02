@@ -68,6 +68,10 @@
         border-radius: 10px;
     }
 
+    .border-radius-15px {
+        border-radius: 15px;
+    }
+
     .border-radius-20px {
         border-radius: 20px;
     }
@@ -191,8 +195,16 @@
         height: 50px;
     }
 
+    .height-360px {
+        height: 360px;
+    }
+
     [data-height="calc(100% + 10px)"] {
         height: calc(100% + 10px);
+    }
+
+    [data-height="50%"] {
+        height: 50%;
     }
 }
 
