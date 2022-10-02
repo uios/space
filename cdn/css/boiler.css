@@ -64,6 +64,14 @@
         border-radius: 50%;
     }
 
+    .border-radius-10px {
+        border-radius: 10px;
+    }
+
+    .border-radius-20px {
+        border-radius: 20px;
+    }
+
     .border-radius-50px {
         border-radius: 50px;
     }
@@ -201,6 +209,10 @@
 
 /*LEFT*/
 @media screen {
+    [data-left="-5px"] {
+        left: -5px;        
+    }
+    
     .left-0 {
         left: 0;
     }
@@ -217,6 +229,10 @@
 @media screen {
     .margin-auto {
         margin: auto;
+    }
+
+    .margin-10px {
+        margin: 10px;
     }
 
     .margin-bottom-30px {
@@ -371,6 +387,10 @@
 
 /*TOP*/
 @media screen {
+    [data-top="-5px"] {
+        top: -5px;        
+    }
+    
     .top-0 {
         top: 0;
     }
