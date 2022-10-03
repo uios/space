@@ -8,8 +8,8 @@
         <meta name="apple-mobile-web-app-title" content="Space">
         <meta name="application-name" content="Space">
         <meta name="application-shortname" content="space">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name='theme-color' content='#021025'>
+        <meta name="msapplication-TileColor" content="#662e91">
+        <meta name='theme-color' content='#662e91'>
         <script>
             var domains = window.location.host.split('.');
             window.globals = {
@@ -23,6 +23,7 @@
             base.href = (globals.domains.domain === "github" ? "/" + document.head.querySelector('[name="application-shortname"]').content : "") + "/";
             document.head.appendChild(base);
         </script>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
         <link href="index.css" rel="stylesheet">
         <link href="cdn/css/gg.css" rel="stylesheet">
         <link href="cdn/css/boiler.css" rel="stylesheet">
