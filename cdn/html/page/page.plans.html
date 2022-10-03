@@ -1,7 +1,7 @@
 <blocks class="-noauth padding-top-70px"></blocks>
 <blocks class="-isauth flex-grow-1 margin-left-256px padding-top-70px" data-960px-margin-left="0">
     <block>
-        <picture class="background-color-ff3b30 border-radius-15px margin-5px position-absolute" data-height="50%" data-width="calc(100% - 10px)" data-z-index="-1"></picture>
+        <picture class="background-color-ff3b30 border-radius-15px margin-10px position-absolute" data-height="50%" data-width="calc(100% - 20px)" data-z-index="-1"></picture>
         <header>
             <card class="color-fff line-height-50px padding-top-50px text-align-center">
                 <column>
@@ -21,17 +21,17 @@
                     </box>
                 </column>
             </card>
-            <card class="background-color-fff border-radius-50px line-height-50px margin-bottom-50px margin-x-auto margin-y-18px padding-x-5px text-align-center width-300px" data-box-shadow="0 0 2pc -10px">
-                <picture class="border-radius-50px height-40px margin-y-5px position-absolute width-50pct" data-background-color="#ff3b30"></picture>
+            <card class="background-color-fff border-radius-50px line-height-50px margin-bottom-50px margin-x-auto margin-y-18px text-align-center width-300px" data-box-shadow="0 0 2pc -10px" data-tap="controller.plans.view(event)">
+                <picture class="border-radius-50px height-40px margin-5px position-absolute" data-background-color="#ff3b30" data-transition="0.3s" data-width="calc((100% - 10px)/2)"></picture>
                 <row data-columns="2">
                     <box>
                         <section>
-                            <text data-color="#fff">Monthly</text>
+                            <text class="align-items-center display-flex flex-grow-1 justify-content-center text-transform-capitalize" data-before="monthly" data-color="#fff" data-transition="0.3s all"></text>
                         </section>
                     </box>
                     <box>
                         <section>
-                            <text>Yearly</text>
+                            <text class="align-items-center display-flex flex-grow-1 justify-content-center text-transform-capitalize" data-before="yearly" data-transition="0.3s all"></text>
                         </section>
                     </box>
                 </row>
@@ -40,8 +40,8 @@
         <section>
             <card class="align-items-center color-777 text-align-center">
                 <row class="align-items-center justify-content-center">
-                    <box class="background-color-fff border-radius-10px height-360px justify-content-center margin-10px padding-20px width-160px">
-                        <picture class="background-color-ff3b30 border-radius-15px position-absolute" data-height="calc(100% + 10px)" data-left="-5px" data-top="-5px" data-width="calc(100% + 10px)" data-z-index="-1"></picture>
+                    <box class="background-color-fff border-radius-50pct height-240px justify-content-center margin-10px padding-20px width-240px">
+                        <picture class="background-color-ff3b30 border-radius-50pct position-absolute" data-height="calc(100% + 10px)" data-left="-5px" data-top="-5px" data-width="calc(100% + 10px)" data-z-index="-1"></picture>
                         <column class="z-index-1">
                             <text class="margin-bottom-30px font-size-24px">
                                 <b>Plus</b>

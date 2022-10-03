@@ -13,7 +13,7 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
     console.log(108, {
         route
     });
-        
+
     return new Promise(async function(resolve, reject) {
         var page = route.page;
         var path = route.path;
@@ -42,15 +42,36 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
             } else {
                 resolve(route);
             }
-                
+
         } else {
-                
+
             resolve(route);
-                
+
         }
     }
     );
 }
 );
 
-window.mvc.c ? null : (window.mvc.c = controller = {});
+window.mvc.c ? null : (window.mvc.c = controller = {
+
+    plans: {
+
+        view: (event)=>{
+               
+            event.preventDefault();
+            const target = event.target;
+            var cycle = target.closest('[data-before]');
+            if(cycle) {
+                const card = target.closest('card');
+                card.firstElementChild.dataset.transform = cycle.dataset.before === "monthly" ? "translateX(0)" : "translateX(100%)";
+                card.find('[data-color]').removeAttribute('data-color');
+                target.dataset.color = "#fff";
+                
+            }
+
+        }
+
+    }
+
+});
