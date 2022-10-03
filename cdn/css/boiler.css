@@ -6,11 +6,11 @@
 }
 
 /*BACKGROUND COLOR*/
-@media screen {    
+@media screen {
     .background-color-0096c7 {
-        background-color: #0096c7;    
+        background-color: #0096c7;
     }
-    
+
     .background-color-1a73e8 {
         background-color: #1a73e8;
     }
@@ -30,7 +30,7 @@
     .background-color-fff {
         background-color: #fff;
     }
-    
+
     .background-color-ff3b30, [data-background-color="#ff3b30"] {
         background-color: #ff3b30;
     }
@@ -97,7 +97,7 @@
     [data-box-shadow="0 0 2pc -10px"] {
         box-shadow: 0 0 2pc -10px;
     }
-    
+
     [data-box-shadow="0 1px 3px rgb(60 64 67 / 15%), 0 1px 2px rgb(60 64 67 / 30%)"] {
         box-shadow: 0 1px 3px rgb(60 64 67 / 15%), 0 1px 2px rgb(60 64 67 / 30%);
     }
@@ -120,6 +120,7 @@
     .color-777 {
         color: #777;
     }
+
     .color-fff, [data-color="#fff"] {
         color: #fff;
     }
@@ -226,9 +227,9 @@
 /*JUSTIFY CONTENT*/
 @media screen {
     .justify-content-center {
-        justify-content: center;    
+        justify-content: center;
     }
-    
+
     .justify-content-space-between {
         justify-content: space-between;
     }
@@ -237,9 +238,9 @@
 /*LEFT*/
 @media screen {
     [data-left="-5px"] {
-        left: -5px;        
+        left: -5px;
     }
-    
+
     .left-0 {
         left: 0;
     }
@@ -271,7 +272,7 @@
     }
 
     .margin-bottom-50px {
-        margin-bottom: 50px; 
+        margin-bottom: 50px;
     }
 
     .margin-left-10px {
@@ -325,6 +326,12 @@
     .margin-y-120px {
         margin-bottom: 120px;
         margin-top: 120px;
+    }
+    
+    @media (max-width: 960px) {
+        [data-960px-margin-left="0"] {
+            margin-left: 0;
+        }
     }
 }
 
@@ -429,11 +436,20 @@
 /*TOP*/
 @media screen {
     [data-top="-5px"] {
-        top: -5px;        
+        top: -5px;
     }
-    
+
     .top-0 {
         top: 0;
+    }
+}
+
+/*TRANSFORM*/
+@media screen {
+    @media (max-width: 960px) {
+        [data-960px-transform="translateX(-100%)"] {
+            transform: translateX(-100%);
+        }
     }
 }
 
@@ -442,7 +458,7 @@
     .width-50pct {
         width: 50%;
     }
-    
+
     .width-75pct {
         width: 75%;
     }
@@ -481,7 +497,7 @@
     .z-index-1 {
         z-index: 1;
     }
-    
+
     .z-index-3 {
         z-index: 123;
     }
