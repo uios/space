@@ -23,16 +23,12 @@
         background-color: #dbdbdb;
     }
 
-    .background-color-ff3b30 {
+    .background-color-ff3b30, [data-background-color="#ff3b30"] {
         background-color: #ff3b30;
     }
 
     .background-color-fff {
         background-color: #fff;
-    }
-
-    .background-color-ff3b30, [data-background-color="#ff3b30"] {
-        background-color: #ff3b30;
     }
 }
 
@@ -123,6 +119,18 @@
 
     .color-fff, [data-color="#fff"] {
         color: #fff;
+    }
+
+    .color-ff3b30 {
+        color: #ff3b30;
+    }
+
+    .color-32cd32 {
+        color: #32cd32;
+    }
+
+    .color-0096c7 {
+        color: #0096c7;
     }
 }
 

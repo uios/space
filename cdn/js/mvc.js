@@ -57,9 +57,8 @@ window.mvc.c ? null : (window.mvc.c = controller = {
 
     plans: {
 
-        period: (event)=>{
-
-            const target = event.target;
+        period: (target)=>{
+            
             var cycle = target.closest('[data-before]');
             if (cycle) {
                 const card = target.closest('card');
@@ -76,6 +75,16 @@ window.mvc.c ? null : (window.mvc.c = controller = {
                 }
                 card.find('[data-color]').removeAttribute('data-color');
                 target.dataset.color = "#fff";
+            }
+
+        },
+
+        view: (target)=>{
+            
+            const plan = target.closest('box');
+            if(plan) {
+                const type = plan.find('text b').textContent;
+                alert(type);
             }
 
         }
