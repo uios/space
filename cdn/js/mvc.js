@@ -57,17 +57,25 @@ window.mvc.c ? null : (window.mvc.c = controller = {
 
     plans: {
 
-        view: (event)=>{
-               
-            event.preventDefault();
+        period: (event)=>{
+
             const target = event.target;
             var cycle = target.closest('[data-before]');
-            if(cycle) {
+            if (cycle) {
                 const card = target.closest('card');
-                card.firstElementChild.dataset.transform = cycle.dataset.before === "monthly" ? "translateX(0)" : "translateX(100%)";
+                const section = target.closest('header').nextElementSibling;
+                if (cycle.dataset.before === "monthly") {
+                    card.firstElementChild.dataset.transform = "translateX(0)";
+                    $(section.all('box > :last-child > :nth-child(1)')).removeClass('display-none');
+                    $(section.all('box > :last-child > :nth-child(2)')).addClass('display-none');
+                }
+                if (cycle.dataset.before === "yearly") {
+                    card.firstElementChild.dataset.transform = "translateX(100%)";
+                    $(section.all('box > :last-child > :nth-child(1)')).addClass('display-none');
+                    $(section.all('box > :last-child > :nth-child(2)')).removeClass('display-none');
+                }
                 card.find('[data-color]').removeAttribute('data-color');
                 target.dataset.color = "#fff";
-                
             }
 
         }
