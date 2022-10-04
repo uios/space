@@ -58,7 +58,7 @@ window.mvc.c ? null : (window.mvc.c = controller = {
     plans: {
 
         period: (target)=>{
-            
+
             var cycle = target.closest('[data-before]');
             if (cycle) {
                 const card = target.closest('card');
@@ -77,14 +77,22 @@ window.mvc.c ? null : (window.mvc.c = controller = {
                 target.dataset.color = "#fff";
             }
 
-        },
+        }
+        ,
 
         view: (target)=>{
-            
+
             const plan = target.closest('box');
-            if(plan) {
+            if (plan) {                
+                const plans = $(plan.parentNode.all('box'));
+                plans.attr("data-height", "120px");
+                plans.attr("data-width", "120px");
+                $(plan.parentNode.all('box > picture + column')).addClass("display-none");
                 const type = plan.find('text b').textContent;
-                alert(type);
+                
+                $(plan.all('picture + column')).removeClass("display-none");
+                plan.dataset.height = "240px";
+                plan.dataset.width = "240px";
             }
 
         }

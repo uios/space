@@ -40,10 +40,12 @@ Array.prototype.removeClass = function(name) {
 Array.prototype.attr = function(attr, name) {
     var that = this;
     if (that.length > 1) {
-        for (var i = that.length; i--; ) {
-            var it = this[i];
+        var i = 0;
+        do {
+            var it = this[i]; console.log(that,i,it);
             it ? it.setAttribute(attr, name) : null;
-        }
+            i++;
+        } while(i < that.length)
     } else {
         that[0] ? that[0].setAttribute(attr, name) : null;
     }
