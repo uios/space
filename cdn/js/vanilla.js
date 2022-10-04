@@ -42,7 +42,7 @@ Array.prototype.attr = function(attr, name) {
     if (that.length > 1) {
         var i = 0;
         do {
-            var it = this[i]; console.log(that,i,it);
+            var it = this[i];
             it ? it.setAttribute(attr, name) : null;
             i++;
         } while(i < that.length)
