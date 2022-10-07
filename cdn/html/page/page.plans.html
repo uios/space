@@ -1,9 +1,9 @@
 <blocks class="-noauth padding-top-70px"></blocks>
 <blocks class="-isauth flex-grow-1 margin-left-256px padding-top-70px" data-960px-margin-left="0">
-    <block>
-        <picture class="border-radius-15px margin-10px position-absolute" data-background-color="#ff3b30" data-height="50%" data-width="calc(100% - 20px)" data-z-index="-1"></picture>
+    <block data-tablet-height="100%">
+        <picture class="border-radius-15px margin-10px position-absolute" data-background-color="#ff3b30" data-height="50%" data-tablet-border-radius="0" data-tablet-height="100%" data-tablet-margin="0" data-tablet-width="100%" data-width="calc(100% - 20px)" data-z-index="-1"></picture>
         <header>
-            <card class="color-fff line-height-50px padding-top-50px text-align-center">
+            <card class="color-fff line-height-50px padding-top-50px -tablet-display-none text-align-center">
                 <column>
                     <box>
                         <section>
@@ -37,12 +37,12 @@
                 </row>
             </card>
         </header>
-        <section>
-            <card class="align-items-center color-777 text-align-center">
-                <row class="align-items-center justify-content-center" data-tap="controller.plans.view(event.target)">
-                    <box class="background-color-fff border-radius-50pct justify-content-center margin-10px margin-y-120px padding-20px" data-border-radius="50%" data-height="240px" data-width="240px">
-                        <picture class="background-color-ff3b30 border-radius-50pct position-absolute" data-height="calc(100% + 10px)" data-left="-5px" data-top="-5px" data-width="calc(100% + 10px)" data-z-index="-1"></picture>
-                        <column class="margin-bottom-10px z-index-1">
+        <section data-tablet-margin-x="0">
+            <card class="align-items-center color-777 overflow-hidden text-align-center" data-tablet-align-items="flex-start">
+                <row class="align-items-center justify-content-center" data-tablet-margin-x="20px" data-tap="controller.plans.view(event.target)">
+                    <box class="background-color-fff border-radius-50pct justify-content-center margin-10px margin-y-120px padding-20px" data-border-radius="50%" data-height="240px" data-tablet-border-radius="10px" data-height="160px" data-tablet-border-radius="10px" data-tablet-height="360px" data-tablet-width="calc((100vw - 100px)/1)" data-width="240px">
+                        <picture class="background-color-ff3b30 border-radius-50pct position-absolute" data-height="calc(100% + 10px)" data-left="-5px" data-top="-5px" data-tablet-border-radius="10px" data-tablet-display="none" data-height="160px" data-tablet-border-radius="10px" data-width="calc(100% + 10px)" data-z-index="-1"></picture>
+                        <column class="margin-bottom-10px z-index-1" data-tablet-display="flex">
                             <text class="margin-bottom-30px font-size-24px text-transform-capitalize">
                                 <b>plus</b>
                             </text>
@@ -59,9 +59,9 @@
                             </flex>
                         </column>
                     </box>
-                    <box class="background-color-fff border-radius-50pc justify-content-center margin-10px margin-y-120px padding-20px" data-border-radius="50%" data-height="160px" data-width="160px">
-                        <picture class="background-color-32cd32 border-radius-50pct position-absolute" data-border-radius="50%" data-height="calc(100% + 10px)" data-left="-5px" data-top="-5px" data-width="calc(100% + 10px)" data-z-index="-1"></picture>
-                        <column class="margin-bottom-10px display-none z-index-1">
+                    <box class="background-color-fff border-radius-50pc justify-content-center margin-10px margin-y-120px padding-20px" data-border-radius="50%" data-height="160px" data-tablet-border-radius="10px" data-height="160px" data-tablet-border-radius="10px" data-tablet-height="360px" data-tablet-width="calc((100vw - 100px)/1)" data-width="160px">
+                        <picture class="background-color-32cd32 border-radius-50pct position-absolute" data-border-radius="50%" data-height="calc(100% + 10px)" data-left="-5px" data-tablet-border-radius="10px" data-tablet-display="none" data-height="160px" data-tablet-border-radius="10px" data-top="-5px" data-width="calc(100% + 10px)" data-z-index="-1"></picture>
+                        <column class="margin-bottom-10px display-none z-index-1" data-tablet-display="flex">
                             <text class="margin-bottom-30px font-size-24px text-transform-capitalize">
                                 <b>pro</b>
                             </text>
@@ -78,9 +78,9 @@
                             </flex>
                         </column>
                     </box>
-                    <box class="background-color-fff border-radius-50pct justify-content-center margin-10px margin-y-120px padding-20px" data-border-radius="50%" data-height="160px" data-width="160px">
-                        <picture class="background-color-0096c7 border-radius-50pct position-absolute" data-border-radius="50%" data-height="calc(100% + 10px)" data-left="-5px" data-top="-5px" data-width="calc(100% + 10px)" data-z-index="-1"></picture>
-                        <column class="margin-bottom-10px display-none z-index-1">
+                    <box class="background-color-fff border-radius-50pct justify-content-center margin-10px margin-y-120px padding-20px" data-border-radius="50%" data-height="160px" data-tablet-border-radius="10px" data-tablet-height="360px" data-tablet-width="calc((100vw - 100px)/1)" data-width="160px">
+                        <picture class="background-color-0096c7 border-radius-50pct position-absolute" data-border-radius="50%" data-height="calc(100% + 10px)" data-height="160px" data-tablet-border-radius="10px" data-tablet-display="none" data-left="-5px" data-tablet-border-radius="10px" data-top="-5px" data-width="calc(100% + 10px)" data-z-index="-1"></picture>
+                        <column class="margin-bottom-10px display-none z-index-1" data-tablet-display="flex">
                             <text class="margin-bottom-30px font-size-24px text-transform-capitalize">
                                 <b>max</b>
                             </text>
@@ -100,10 +100,10 @@
                 </row>
             </card>
         </section>
-        <footer>
+        <footer class="bottom-0 left-0 right-0" data-tablet-position="fixed">
             <card class="margin-bottom-50px margin-top-120px">
                 <flex class="justify-content-center">
-                    <box class="border-radius-50px color-fff line-height-50px text-align-center width-160px" data-background-color="#ff3b30">
+                    <box class="border-radius-50px color-fff line-height-50px text-align-center width-160px" data-background-color="#ff3b30" data-tablet-background-color="#fff" data-tablet-color="#777">
                         <section>
                             <text>Select Plan</text>
                         </section>
