@@ -567,6 +567,16 @@
             transform: translateX(-100%);
         }
     }
+
+    @media (max-width: 768px) {
+        [data-tablet-transform="translateX(-100%)"] {
+            transform: translateX(100%);
+        }
+        
+        [data-tablet-transform="translateX(-200%)"] {
+            transform: translateX(-200%);
+        }
+    }
 }
 
 /*TRANSITION*/

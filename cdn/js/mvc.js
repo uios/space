@@ -93,6 +93,10 @@ window.mvc.c ? null : (window.mvc.c = controller = {
                 $(plan.all('picture + column')).removeClass("display-none");
                 plan.dataset.height = "240px";
                 plan.dataset.width = "240px";
+
+                const row = plan.parentNode;
+                //row.dataset.tabletTransform = "translateX(-"+plan.index()+"00%)";
+                plans.attr("data-tablet-transform", "translateX(-"+plan.index()+"00%)");
             }
 
         }
