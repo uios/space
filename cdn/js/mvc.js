@@ -80,33 +80,47 @@ window.mvc.c ? null : (window.mvc.c = controller = {
         }
         ,
 
+        select: (type)=>{
+            alert("Selecting " + type.charAt(0).toUpperCase() + type.slice(1)+ " Plan");
+        }
+        ,
+
         view: (target)=>{
 
-            const plan = target.closest('box');
-            if (plan) {        
+            const index = target.closest('box').index();
+
+            const plan = target.closest('block').find('block > section').all('box')[index];
+            if (plan) {
                 const row = plan.parentNode;
-                
+
                 const plans = $(row.all('box'));
                 plans.attr("data-height", "120px");
                 plans.attr("data-width", "120px");
                 $(plan.parentNode.all('box > picture + column')).addClass("display-none");
                 const type = plan.find('text b').textContent;
-                
+
                 $(plan.all('picture + column')).removeClass("display-none");
                 plan.dataset.height = "240px";
                 plan.dataset.width = "240px";
 
                 const index = plan.index();
-                row.dataset.tabletTransform = "translateX(calc((-100%/3)*"+index+"))";
+                row.dataset.tabletTransform = "translateX(calc((-100%/3)*" + index + "))";
 
                 const backgroundColor = plan.firstElementChild.dataset.backgroundColor;
                 row.closest('block').find('header').children[1].firstElementChild.dataset.backgroundColor = backgroundColor;
                 row.closest('block').firstElementChild.dataset.backgroundColor = backgroundColor;
 
-                const bullets = $(row.closest('block').find('footer').all('box'));
-                $(row.closest('block').find('footer').all('box flex')).addClass('display-none');
-                bullets[index].find('flex').classList.remove('display-none');
-                
+                const footer = row.closest('block').find('footer');
+                if (footer) {
+                    const bullets = $(footer.all('box'));
+                    const bullet = bullets[index];
+                    const button = bullet.find('flex');
+                    if (button.classList.contains('display-none') === false) {
+                        controller.plans.select(type);
+                    }
+                    $(footer.all('box flex')).addClass('display-none');
+                    button.classList.remove('display-none');
+                }
             }
 
         }
