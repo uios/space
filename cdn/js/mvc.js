@@ -30,6 +30,19 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
             } else if (root === "benefits") {
                 resolve(route);
             } else if (root === "plans") {
+                if (get[1]) {
+                    if (get[2] === "pay") {
+                        alert("Loading Payment Form");
+                    } 
+                    else {
+                        if (get[1] === "plus") {
+                        }
+                        if (get[1] === "pro") {
+                        }
+                        if (get[1] === "max") {
+                        }
+                    }
+                }
                 resolve(route);
             } else if (root === "help") {
                 resolve(route);
@@ -81,7 +94,7 @@ window.mvc.c ? null : (window.mvc.c = controller = {
         ,
 
         select: (type)=>{
-            alert("Selecting " + type.charAt(0).toUpperCase() + type.slice(1)+ " Plan");
+            alert("Selecting " + type.charAt(0).toUpperCase() + type.slice(1) + " Plan");
         }
         ,
 
