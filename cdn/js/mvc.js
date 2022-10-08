@@ -31,11 +31,21 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                 resolve(route);
             } else if (root === "plans") {
                 if (get[1]) {
+                    const vp = dom.body.find('[data-root="/plans/"]');
                     if (get[2] === "pay") {
-                        alert("Loading Payment Form");
-                    } 
-                    else {
-                        const vp = dom.body.find('[data-root="/plans/"]');
+                        if (get[1] === "plus") {
+                            var target = vp.find('footer').all('box')[0];
+                            controller.plans.select(target);
+                        }
+                        if (get[1] === "pro") {
+                            var target = vp.find('footer').all('box')[1];
+                            controller.plans.select(target);
+                        }
+                        if (get[1] === "max") {
+                            var target = vp.find('footer').all('box')[2];
+                            controller.plans.select(target);
+                        }
+                    } else {
                         if (get[1] === "plus") {
                             var target = vp.find('footer').all('box')[0];
                             controller.plans.view(target);
@@ -100,7 +110,10 @@ window.mvc.c ? null : (window.mvc.c = controller = {
         }
         ,
 
-        select: (type)=>{
+        select: (target)=>{
+            const index = target.closest('box').index();
+            const plan = target.closest('block').find('block > section').all('box')[index];
+            const type = plan.find('text b').textContent;
             alert("Selecting " + type.charAt(0).toUpperCase() + type.slice(1) + " Plan");
         }
         ,
@@ -135,9 +148,6 @@ window.mvc.c ? null : (window.mvc.c = controller = {
                     const bullets = $(footer.all('box'));
                     const bullet = bullets[index];
                     const button = bullet.find('flex');
-                    if (button.classList.contains('display-none') === false) {
-                        controller.plans.select(type);
-                    }
                     $(footer.all('box flex')).addClass('display-none');
                     button.classList.remove('display-none');
                 }
