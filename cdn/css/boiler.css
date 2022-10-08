@@ -13,7 +13,7 @@
 
 /*BACKGROUND COLOR*/
 @media screen {
-    .background-color-0096c7 {
+    .background-color-0096c7, [data-background-color="#0096c7"] {
         background-color: #0096c7;
     }
 
@@ -21,7 +21,7 @@
         background-color: #1a73e8;
     }
 
-    .background-color-32cd32 {
+    .background-color-32cd32, [data-background-color="#32cd32"] {
         background-color: #32cd32;
     }
 
@@ -388,6 +388,11 @@
         margin-right: 10px;
     }
 
+    .margin-x-20px {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
     .margin-x-auto {
         margin-left: auto;
         margin-right: auto;
@@ -438,6 +443,13 @@
 @media screen {
     .min-height-100pct {
         min-height: 100%;
+    }
+}
+
+/*MIN WIDTH*/
+@media screen {
+    .min-width-50px {
+        min-width: 50px;
     }
 }
 
@@ -568,13 +580,13 @@
         }
     }
 
-    @media (max-width: 768px) {
-        [data-tablet-transform="translateX(-100%)"] {
-            transform: translateX(100%);
+    @media (max-width: 768px) {        
+        [data-tablet-transform="translateX(calc((-100%/3)*1))"] {
+            transform: translateX(calc((-100%/3)*1));
         }
         
-        [data-tablet-transform="translateX(-200%)"] {
-            transform: translateX(-200%);
+        [data-tablet-transform="translateX(calc((-100%/3)*2))"] {
+            transform: translateX(calc((-100%/3)*2));
         }
     }
 }

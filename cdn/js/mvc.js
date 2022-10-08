@@ -83,8 +83,10 @@ window.mvc.c ? null : (window.mvc.c = controller = {
         view: (target)=>{
 
             const plan = target.closest('box');
-            if (plan) {                
-                const plans = $(plan.parentNode.all('box'));
+            if (plan) {        
+                const row = plan.parentNode;
+                
+                const plans = $(row.all('box'));
                 plans.attr("data-height", "120px");
                 plans.attr("data-width", "120px");
                 $(plan.parentNode.all('box > picture + column')).addClass("display-none");
@@ -94,9 +96,16 @@ window.mvc.c ? null : (window.mvc.c = controller = {
                 plan.dataset.height = "240px";
                 plan.dataset.width = "240px";
 
-                const row = plan.parentNode;
-                //row.dataset.tabletTransform = "translateX(-"+plan.index()+"00%)";
-                plans.attr("data-tablet-transform", "translateX(-"+plan.index()+"00%)");
+                const index = plan.index();
+                row.dataset.tabletTransform = "translateX(calc((-100%/3)*"+index+"))";
+
+                const backgroundColor = plan.firstElementChild.dataset.backgroundColor;
+                row.closest('block').firstElementChild.dataset.backgroundColor = backgroundColor;
+
+                const bullets = $(row.closest('block').find('footer').all('box'));
+                $(row.closest('block').find('footer').all('box flex')).addClass('display-none');
+                bullets[index].find('flex').classList.remove('display-none');
+                
             }
 
         }
