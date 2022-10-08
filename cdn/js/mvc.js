@@ -100,6 +100,7 @@ window.mvc.c ? null : (window.mvc.c = controller = {
                 row.dataset.tabletTransform = "translateX(calc((-100%/3)*"+index+"))";
 
                 const backgroundColor = plan.firstElementChild.dataset.backgroundColor;
+                row.closest('block').find('header').children[1].firstElementChild.dataset.backgroundColor = backgroundColor;
                 row.closest('block').firstElementChild.dataset.backgroundColor = backgroundColor;
 
                 const bullets = $(row.closest('block').find('footer').all('box'));
