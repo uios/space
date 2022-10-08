@@ -35,11 +35,18 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                         alert("Loading Payment Form");
                     } 
                     else {
+                        const vp = dom.body.find('[data-root="/plans/"]');
                         if (get[1] === "plus") {
+                            var target = vp.find('footer').all('box')[0];
+                            controller.plans.view(target);
                         }
                         if (get[1] === "pro") {
+                            var target = vp.find('footer').all('box')[1];
+                            controller.plans.view(target);
                         }
                         if (get[1] === "max") {
+                            var target = vp.find('footer').all('box')[2];
+                            controller.plans.view(target);
                         }
                     }
                 }
