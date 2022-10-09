@@ -43,7 +43,7 @@
             <row class="justify-content-space-between padding-x-20px padding-y-10px width-100pct">
                 <card class="line-height-50px">
                     <row>
-                        <box class="display-none" data-tablet-display="flex">
+                        <box class="display-none" data-tablet-display="flex" data-tap="controller.menu.open">
                             <row>
                                 <ico>
                                     <n class="gg-menu"></n>
@@ -107,8 +107,9 @@
                 </card>
             </row>
         </header>
-        <nav class="-isauth background-color-fff border-color-dadce0 border-right-1px-solid height-100pct position-fixed width-256px z-index-3" data-960px-transform="translateX(-100%)">
-            <column class="padding-top-70px">
+        <nav class="background-color-fff border-color-dadce0 border-right-1px-solid height-100pct position-fixed width-256px z-index-3" data-960px-transform="translateX(-100%)" data-tablet-z-index="7" data-transition="0.3s">
+            <picture class="-noauth height-100pct position-fixed width-100pct" data-background-color="rgba(0,0,0,0.5)" data-tap="controller.menu.close"></picture>
+            <column class="background-color-fff height-100pct padding-top-70px position-relative z-index-1">
                 <card class="font-weight-bolder line-height-50px padding-top-20px">
                     <column>
                         <box class="border-radius-50px margin-left-10px margin-right-auto" data-box-shadow="0 1px 3px rgb(60 64 67 / 15%), 0 1px 2px rgb(60 64 67 / 30%)" data-href="/plans/">

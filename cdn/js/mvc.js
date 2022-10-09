@@ -87,7 +87,17 @@ window.mvc.c ? null : (window.mvc.c = controller = {
 
     menu: {
         
+        close: () => {
+
+            const nav = dom.body.find('body > nav'); console.log(nav.dataset);
+            nav.dataset["960pxTransform"] = "translateX(-100%)";
+            
+        },
+        
         open: () => {
+
+            const nav = dom.body.find('body > nav'); console.log(nav.dataset);
+            nav.dataset["960pxTransform"] = "0";
             
         }
         
