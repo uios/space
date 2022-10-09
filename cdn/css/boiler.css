@@ -702,6 +702,10 @@
         width: calc(100% + 10px);
     }
 
+    .width-100vw {
+        width: 100vw;
+    }
+
     @media (max-width: 768px) {
         [data-tablet-width="100%"] {
             width: 100%;

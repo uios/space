@@ -91,6 +91,7 @@ window.mvc.c ? null : (window.mvc.c = controller = {
 
             const nav = dom.body.find('body > nav'); console.log(nav.dataset);
             nav.dataset["960pxTransform"] = "translateX(-100%)";
+            nav.firstElementChild.classList.add('display-none');
             
         },
         
@@ -98,6 +99,7 @@ window.mvc.c ? null : (window.mvc.c = controller = {
 
             const nav = dom.body.find('body > nav'); console.log(nav.dataset);
             nav.dataset["960pxTransform"] = "0";
+            nav.firstElementChild.classList.remove('display-none');
             
         }
         
