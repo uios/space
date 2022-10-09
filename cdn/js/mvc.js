@@ -114,7 +114,6 @@ window.mvc.c ? null : (window.mvc.c = controller = {
             const index = target.closest('box').index();
             const plan = target.closest('block').find('block > section').all('box')[index];
             const type = plan.find('text b').textContent;
-            alert("Selecting " + type.charAt(0).toUpperCase() + type.slice(1) + " Plan");
         }
         ,
 
@@ -149,7 +148,9 @@ window.mvc.c ? null : (window.mvc.c = controller = {
                     const bullet = bullets[index];
                     const button = bullet.find('flex');
                     $(footer.all('box flex')).addClass('display-none');
+                    $(footer.all('box')).attr('data-width','50px');
                     button.classList.remove('display-none');
+                    button.closest('box').dataset.width = "120px";
                 }
             }
 
