@@ -85,6 +85,14 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
 
 window.mvc.c ? null : (window.mvc.c = controller = {
 
+    menu: {
+        
+        open: () => {
+            
+        }
+        
+    },
+    
     plans: {
 
         period: (target)=>{

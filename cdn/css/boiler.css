@@ -213,6 +213,14 @@
     }
 }
 
+
+/*FLEX GROW*/
+@media screen {
+    .flex-direction-column {
+        flex-direction: column;
+    }
+}
+
 /*FLEX GROW*/
 @media screen {
     .flex-grow-1 {
@@ -244,6 +252,20 @@
 
     .font-size-48px {
         font-size: 48px;
+    }
+
+    .font-size-60px {
+        font-size: 60px;
+    }
+
+    @media (max-width: 768px) {
+        [data-tablet-font-size="16px"] {
+            font-size: 16px;
+        }
+        
+        [data-tablet-font-size="30px"] {
+            font-size: 30px;
+        }
     }
 }
 
@@ -481,6 +503,10 @@
         padding: 20px;
     }
 
+    .padding-bottom-10px {
+        padding-bottom: 10px;
+    }
+
     .padding-left-5px {
         padding-left: 5px;
     }
@@ -513,6 +539,11 @@
     .padding-x-20px {
         padding-left: 20px;
         padding-right: 20px;
+    }
+
+    .padding-x-50px {
+        padding-left: 50px;
+        padding-right: 50px;
     }
 
     .padding-y-10px {
