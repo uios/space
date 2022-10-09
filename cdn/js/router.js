@@ -14,6 +14,12 @@ String.prototype.router = async function(params) {
         vp
     }, 'pages[data-pages="' + getRoot() + '"]');
 
+    if (pages) {
+        if (pages.innerHTML === "" && pages.dataset.fetch) {
+            pages.innerHTML = await ajax(pages.dataset.fetch);
+        }
+    }
+
     if (vp) {
         var goto = window.global.domains.subdomain === "uios" ? '/' + document.head.querySelector('[name="application-shortname"]').content : '';
         if (vp.innerHTML === "" && vp.dataset.fetch) {
