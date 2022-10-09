@@ -1,55 +1,50 @@
 <blocks>
-    <block class="-isauth height-100pct">
+    <block class="-isauth height-100pct justify-content-center">
         <section class="padding-y-50px max-height-100pct-minus-120px" data-max-height="calc(100% - 120px)">
             <picture class="display-flex flex-grow-1 height-100pct position-fixed top-0 width-100pct" data-backdrop-filter="blur(10px)" data-background-color="rgba(0,0,0,0.5)" data-href="/:get/:get/"></picture>
             <card class="background-color-fff border-radius-10px margin-auto width-300px">
-                <picture></picture>
-                <form class="border-radius-20px direction-column flex-unset font-size-13px margin-x-auto noauth padding-y-10px width-300px" id="my-login" onsubmit="controller.my.login(event)">
-                    <box class="background-color-fff border-radius-5px margin-bottom-10px box-shadow-0-1px-6px-0 width-100pct">
-                        <section>
-                            <input class="line-height-36px padding-x-10px width-100pct" placeholder="Email" type="text">
-                        </section>
+                <header>
+                    <box>
+                        <column>
+                            <text placeholder="Plan Type"></text>
+                            <text placeholder="Plan Description"></text>
+                        </columnn>
                     </box>
-                    <box class="background-color-fff border-radius-5px margin-bottom-10px box-shadow-0-1px-6px-0 width-100pct">
-                        <section class="flex-direction-row flex">
-                            <input class="flex-1 line-height-36px padding-x-10px" placeholder="Password" type="password">
-                            <input class="height-36px invert ui-bg-key width-36px" type="submit">
-                        </section>
-                    </box>
-                    <box class="width-100pct">
+                </header>
+                <form class="border-radius-20px direction-column flex-unset font-size-13px margin-x-auto noauth order-2 padding-y-10px width-300px" id="my-login" onsubmit="controller.my.login(event)">
+                    <box>
+                        <text>Card Number</text>
                         <row>
-                            <span class="background-color-fff border-radius-5px display-inline-flex box-shadow-0-1px-6px-0 width-50pct">
-                                <ico class="position-absolute left-0 invert" data-height="36px" data-width="36px">
-                                    <n class="ui-bg-google"></n>
-                                </ico>
-                                <text class="flex-1 line-height-36px text-align-center" data-submit="my-login">Log In</text>
-                                <input type="submit">
-                            </span>
-                            <span class="background-color-fff border-radius-5px color-000 display-inline-flex margin-left-10px box-shadow-0-1px-6px-0 width-50pct" data-href="/my/account/">
-                                <ico class="position-absolute height-36px left-0 width-36px" data-height="36px" data-width="36px">
-                                    <n class="ui-bg-email"></n>
-                                </ico>
-                                <text class="flex-1 line-height-36px text-align-center">Sign Up</text>
-                            </span>
+                            <StripeElement></StripeElement>
                         </row>
                     </box>
-                    <box class="background-color-fff border-radius-5px color-000 margin-top-36px box-shadow-0-1px-6px-0 width-100pct" data-href="/">
-                        <section>
-                            <ico class="position-absolute height-36px left-0 width-36px" data-height="36px" data-width="36px">
-                                <n class="ui-bg-email"></n>
-                            </ico>
-                            <text class="flex-1 line-height-36px text-align-center">Continue as Guest</text>
-                        </section>
+                    <box>
+                        <text>Cardholder Name</text>
+                        <row>
+                            <StripeElement></StripeElement>
+                        </row>
                     </box>
-                    <box class="padding--10px width-100pct" data-href="/my/account/password/">
-                        <section>
-                            <ico class="position-absolute height-50px invert left-0 width-36px" data-height="50px" data-width="36px">
-                                <n class="ui-bg-incognito"></n>
-                            </ico>
-                            <text class="flex-1 line-height-50px text-align-center">Forgot Password?</text>
-                        </section>
+                    <box>
+                        <text>Expiration Date</text>
+                        <row>
+                            <StripeElement></StripeElement>
+                        </row>
+                    </box>
+                    <box>
+                        <text>Security Code</text>
+                        <row>
+                            <StripeElement></StripeElement>
+                        </row>
+                    </box>
+                    <box>
+                        <row>
+                            <input disabled type="submit" value="Save Card">
+                        </row>
                     </box>
                 </form>
+                <section>
+                    <box></box>
+                </section>
             </card>
         </section>
     </block>
