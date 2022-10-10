@@ -23,6 +23,8 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
 
         window.GET = window.GET ? GET : rout.ed.dir(dom.body.dataset.path);
 
+        controller.menu.close();
+
         if (root) {
 
             if (root === "about") {
