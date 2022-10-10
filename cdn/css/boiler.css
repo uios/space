@@ -197,6 +197,10 @@
     .display-flex {
         display: flex;
     }
+    
+    .display-inline-flex {
+        display: inline-flex;
+    }
 
     .display-none {
         display: none;
@@ -380,6 +384,10 @@
     }
 
     .margin-10px {
+        margin: 10px;
+    }
+
+    .margin-20px {
         margin: 10px;
     }
 
