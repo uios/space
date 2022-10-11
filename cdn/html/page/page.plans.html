@@ -1,4 +1,93 @@
-<blocks class="-noauth padding-top-70px"></blocks>
+<blocks class="-noauth padding-top-70px">
+    <block class="padding-top-70px">
+        <section>
+            <card class="padding-x-50px">
+                <section class="justify-content-center width-100pct">
+                    <box data-tap="controller.menu.open">
+                        <section>
+                            <ico class="margin-auto">
+                                <n class="--ggs-2 gg-cloud"></n>
+                            </ico>
+                        </section>
+                    </box>
+                    <box class="text-align-center">
+                        <column>
+                            <text class="font-size-60px padding-bottom-10px padding-top-20px" data-tablet-font-size="30px">Choose a plan that works for you</text>
+                            <text class="font-size-22px" data-tablet-font-size="16px">Starting at 50 GB. All Space Plans include 1 GB of storage.</text>
+                        </column>
+                    </box>
+                </section>
+            </card>
+            <card class="background-color-fff border-radius-50px line-height-50px margin-bottom-50px margin-x-auto margin-y-18px text-align-center width-300px" data-box-shadow="0 0 2pc -10px" data-tap="controller.plans.period(event.target)">
+                <picture class="border-radius-50px height-40px margin-5px position-absolute" data-background-color="#ff3b30" data-transition="0.3s" data-width="calc((100% - 10px)/2)"></picture>
+                <row data-columns="2">
+                    <box>
+                        <section>
+                            <text class="align-items-center display-flex flex-grow-1 justify-content-center text-transform-capitalize" data-before="monthly" data-color="#fff" data-transition="0.3s all"></text>
+                        </section>
+                    </box>
+                    <box>
+                        <section>
+                            <text class="align-items-center display-flex flex-grow-1 justify-content-center text-transform-capitalize" data-before="yearly" data-transition="0.3s all"></text>
+                        </section>
+                    </box>
+                </row>
+            </card>
+        </section>
+    </block>
+    <block class="padding-top-70px">
+        <section data-columns="4" data-960px-columns="2" data-tablet-columns="1">
+            <card class="border-radius-5px box-shadow-0-1px-6px-0 margin-20px min-height-360px">
+                <section>
+                    <box class="text-align-center">
+                        <column>
+                            <text class="font-size-18px">Free</text>
+                        </column>
+                    </box>
+                </section>
+            </card>
+            <card class="border-radius-5px box-shadow-0-1px-6px-0 margin-20px min-height-360px">
+                <section>
+                    <box class="text-align-center">
+                        <column>
+                            <text class="font-weight-bolder margin-top-10px">Recommended</text>
+                            <text class="font-size-18px margin-top-20px">Plus</text>
+                            <text>50 GB</text>
+                            <text>1$ / month</text>
+                            <text>Billed monthly</text>
+                        </column>
+                    </box>
+                </section>
+            </card>
+            <card class="border-radius-5px box-shadow-0-1px-6px-0 margin-20px min-height-360px">
+                <section>
+                    <box class="text-align-center">
+                        <column>
+                            <text class="font-weight-bolder margin-top-10px">Standard</text>
+                            <text class="font-size-18px margin-top-20px">Pro</text>
+                            <text>50 GB</text>
+                            <text>1$ / month</text>
+                            <text>Billed monthly</text>
+                        </column>
+                    </box>
+                </section>
+            </card>
+            <card class="border-radius-5px box-shadow-0-1px-6px-0 margin-20px min-height-360px">
+                <section>
+                    <box class="text-align-center">
+                        <column>
+                            <text class="font-weight-bolder margin-top-10px">Premium</text>
+                            <text class="font-size-18px margin-top-20px">Max</text>
+                            <text>50 GB</text>
+                            <text>1$ / month</text>
+                            <text>Billed monthly</text>
+                        </column>
+                    </box>
+                </section>
+            </card>
+        </section>
+    </block>
+</blocks>
 <blocks class="-isauth flex-grow-1 margin-left-256px padding-top-70px" data-960px-margin-left="0">
     <block data-tablet-height="100%">
         <picture class="border-radius-15px margin-10px position-absolute" data-background-color="#ff3b30" data-height="50%" data-tablet-border-radius="0" data-tablet-height="100%" data-tablet-margin="0" data-tablet-width="100%" data-width="calc(100% - 20px)" data-z-index="-1"></picture>
