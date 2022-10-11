@@ -139,6 +139,10 @@
         box-shadow: 0 1px 6px 0;
     }
 
+    [data-box-shadow="0 1px 4px -3px"] {
+        box-shadow: 0 1px 4px -3px;
+    }
+
     [data-box-shadow="0 0 2pc -10px"] {
         box-shadow: 0 0 2pc -10px;
     }
