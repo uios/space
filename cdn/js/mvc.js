@@ -106,6 +106,20 @@ window.mvc.c ? null : (window.mvc.c = controller = {
         }
         
     },
+
+    my: {
+        
+        login: (event,f)=>{
+            event.preventDefault();
+            auth.account.login(event).then(e=>(f ? f : '/').router()).catch(e=>{
+                var code = e.code;
+                var message = e.message;
+                alert(message);
+            }
+            );
+        }
+        
+    },
     
     plans: {
 

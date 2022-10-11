@@ -38,7 +38,11 @@
         <script src="index.js"></script>
     </head>
     <body class="-dark-background-color-1f background-color-fff">
-        <boot id="boot"></boot>
+        <boot class="boot" id="boot">
+            <div class="bouncing bounce1 bg-r"></div>
+            <div class="bouncing bounce2 bg-g"></div>
+            <div class="bouncing bounce3 bg-b"></div>
+        </boot>
         <header class="background-color-fff border-1px-solid border-color-dadce0 position-fixed top-0 width-100pct z-index-5">
             <row class="justify-content-space-between padding-x-20px padding-y-10px width-100pct">
                 <card class="line-height-50px">
@@ -85,8 +89,8 @@
                         </box>
                     </row>
                 </card>
-                <card class="font-weight-bolder line-height-50px" data-tablet-display="none">
-                    <row class="-noauth">
+                <card class="-noauth font-weight-bolder line-height-50px" data-tablet-display="none">
+                    <row>
                         <box class="background-color-1a73e8 border-1px-solid border-color-1a73e8 color-fff margin-right-10px" data-href="/plans/">
                             <section>
                                 <text class="padding-x-20px">Upgrade</text>
@@ -98,8 +102,10 @@
                             </section>
                         </box>
                     </row>
-                    <row class="-isauth">
-                        <box class="height-50px margin-right-10px width-50px" data-tap="controller.menu.open">
+                </card>
+                <card class="-isauth">
+                    <row>
+                        <box class="height-50px margin-right-10px width-50px" data-href="/my/">
                             <flex class="align-items-center justify-content-center height-100pct width-100pct">
                                 <picture class="align-center flex justify-center"></picture>
                                 <picture class="background-color-db border-radius-50pct empty-state overflow-hidden position-relative" data-height="50px" data-width="50px">
@@ -277,7 +283,7 @@
                 </card>
             </column>
         </nav>
-        <page class="background-color-fff height-100pct position-fixed width-100pct top-0 z-index-9" data-fetch="/cdn/html/page/page.my.html" data-page="/my/"></page>
+        <page class="height-100pct position-fixed width-100pct top-0 z-index-9" data-fetch="/cdn/html/page/page.my.html" data-page="/my/"></page>
         <page class="height-100pct position-fixed width-100pct top-0 z-index-9" data-fetch="/cdn/html/page/page.plans.plan.pay.html" data-page="/plans/*/pay/"></page>
         <main class="min-height-100pct">
             <page class="width-100pct" data-fetch="/cdn/html/page/page.index.html" data-page="/"></page>
