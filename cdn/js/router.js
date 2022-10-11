@@ -124,7 +124,7 @@ window.rout.ed.bang = async(route)=>{
 
     if (vp && vp.closest('main')) {
         $('pages[data-pages]').removeAttr("data-active");
-        $('page[data-page]').removeAttr("data-active");
+        $('page[data-page]').removeAttr("data-active");   
     } else {
         $('body > page[data-page]').removeAttr("data-active");
         $('body > pages[data-pages]').removeAttr("data-active");
@@ -135,6 +135,10 @@ window.rout.ed.bang = async(route)=>{
     $('[data-hide="' + route.page + '"]').attr("data-active", false);
     $('[data-page="' + route.page + '"]').attr("data-active", true);
     $('[data-path="' + route.path + '"]').attr("data-active", true);
+    
+    $('page[data-page="' + route.page + '"]').attr("data-uri", route.path); 
+    
+    //dom.body.find('[data-page="' + route.page + '"]').setAttribute("data-active", true);
 
     var rs = $('[data-pages]');
     if (rs.length > 0) {
@@ -147,8 +151,8 @@ window.rout.ed.bang = async(route)=>{
     return route;
 }
 window.rout.ed.close = ()=>{
-    var active = document.body.find('main page.active');
-    const goto = (active ? active.dataset.path : '/');
+    var active = document.body.find('main [data-active="true"][data-fetch]');
+    const goto = (active ? active.dataset.uri : '/');
     //alert(goto);
     goto.router();
 }
