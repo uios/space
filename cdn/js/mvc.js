@@ -88,27 +88,30 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
 window.mvc.c ? null : (window.mvc.c = controller = {
 
     menu: {
-        
-        close: () => {
 
-            const nav = dom.body.find('body > nav'); console.log(nav.dataset);
+        close: ()=>{
+
+            const nav = dom.body.find('body > nav');
+            console.log(nav.dataset);
             nav.dataset["960pxTransform"] = "translateX(-100%)";
             nav.firstElementChild.classList.add('display-none');
-            
-        },
-        
-        open: () => {
 
-            const nav = dom.body.find('body > nav'); console.log(nav.dataset);
+        }
+        ,
+
+        open: ()=>{
+
+            const nav = dom.body.find('body > nav');
+            console.log(nav.dataset);
             nav.dataset["960pxTransform"] = "0";
             nav.firstElementChild.classList.remove('display-none');
-            
+
         }
-        
+
     },
 
     my: {
-        
+
         login: (event,f)=>{
             event.preventDefault();
             auth.account.login(event).then(e=>(f ? f : '/').router()).catch(e=>{
@@ -118,10 +121,34 @@ window.mvc.c ? null : (window.mvc.c = controller = {
             }
             );
         }
-        
+
     },
-    
+
     plans: {
+
+        compare: (target)=>{
+
+            var cycle = target.closest('[data-before]').dataset.before;
+
+            if (cycle) {
+                const blocks = target.closest('blocks');
+                const block = blocks.children[1];
+                const card = target.closest('card');
+                if (cycle === "monthly") {
+                    card.firstElementChild.dataset.transform = "translateX(0)";
+                    $(block.all('card text span:nth-child(2)')).attr('data-display', 'none');
+                    $(block.all('card text span:nth-child(1)')).attr('data-display', 'flex');
+                } else if (cycle === "yearly") {
+                    card.firstElementChild.dataset.transform = "translateX(100%)";
+                    $(block.all('card text span:nth-child(1)')).attr('data-display', 'none');
+                    $(block.all('card text span:nth-child(2)')).attr('data-display', 'flex');
+                }
+                card.find('[data-color]').removeAttribute('data-color');
+                target.dataset.color = "#fff";
+            }
+
+        }
+        ,
 
         period: (target)=>{
 
@@ -184,7 +211,7 @@ window.mvc.c ? null : (window.mvc.c = controller = {
                     const bullet = bullets[index];
                     const button = bullet.find('flex');
                     $(footer.all('box flex')).addClass('display-none');
-                    $(footer.all('box')).attr('data-width','50px');
+                    $(footer.all('box')).attr('data-width', '50px');
                     button.classList.remove('display-none');
                     button.closest('box').dataset.width = "120px";
                 }

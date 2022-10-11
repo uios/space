@@ -18,7 +18,7 @@
                     </box>
                 </section>
             </card>
-            <card class="background-color-fff border-radius-50px line-height-50px margin-bottom-50px margin-x-auto margin-y-18px text-align-center width-300px" data-box-shadow="0 0 2pc -10px" data-tap="controller.plans.period(event.target)">
+            <card class="background-color-fff border-radius-50px line-height-50px margin-bottom-50px margin-x-auto margin-y-18px text-align-center width-300px" data-box-shadow="0 0 2pc -10px" data-tap="controller.plans.compare(event.target)">
                 <picture class="border-radius-50px height-40px margin-5px position-absolute" data-background-color="#ff3b30" data-transition="0.3s" data-width="calc((100% - 10px)/2)"></picture>
                 <row data-columns="2">
                     <box>
@@ -53,8 +53,8 @@
                             <text class="font-weight-bolder margin-top-10px">Recommended</text>
                             <text class="font-size-18px margin-top-20px">Plus</text>
                             <text class="font-size-22px">50 GB</text>
-                            <text class="font-size-16px font-weight-bolder margin-top-30px">1$ / month</text>
-                            <text>Billed monthly</text>
+                            <text class="font-size-16px font-weight-bolder margin-top-30px"><span data-display="flex">1$ / month</span><span data-display="none">10$ / year</span></text>
+                            <text>Billed <span data-display="flex">monthly</span><span data-display="none">yearly</span></text>
                         </column>
                     </box>
                 </section>
@@ -66,8 +66,8 @@
                             <text class="font-weight-bolder margin-top-10px">Standard</text>
                             <text class="font-size-18px margin-top-20px">Pro</text>
                             <text class="font-size-22px">1 TB</text>
-                            <text class="font-size-16px font-weight-bolder margin-top-30px">10$ / month</text>
-                            <text>Billed monthly</text>
+                            <text class="font-size-16px font-weight-bolder margin-top-30px"><span data-display="flex">10$ / month</span><span data-display="none">100$ / year</span></text>
+                            <text>Billed <span data-display="flex">monthly</span><span data-display="none">yearly</span></text>
                         </column>
                     </box>
                 </section>
@@ -79,8 +79,8 @@
                             <text class="font-weight-bolder margin-top-10px">Premium</text>
                             <text class="font-size-18px margin-top-20px">Max</text>
                             <text class="font-size-22px">3 TB</text>
-                            <text class="font-size-16px font-weight-bolder margin-top-30px">25$ / month</text>
-                            <text>Billed monthly</text>
+                            <text class="font-size-16px font-weight-bolder margin-top-30px"><span data-display="flex">25$ / month</span><span data-display="none">2500$ / year</span></text>
+                            <text>Billed <span data-display="flex">monthly</span><span data-display="none">yearly</span></text>
                         </column>
                     </box>
                 </section>
