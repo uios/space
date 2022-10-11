@@ -132,7 +132,7 @@ window.mvc.c ? null : (window.mvc.c = controller = {
 
             if (cycle) {
                 const blocks = target.closest('blocks');
-                const block = blocks.children[1];
+                const block = blocks.children[2];
                 const card = target.closest('card');
                 if (cycle === "monthly") {
                     card.firstElementChild.dataset.transform = "translateX(0)";
