@@ -158,6 +158,10 @@
         z-index: 123456789;
     }
 
+    body :not(page)[data-path]:not([data-active="true"]) {
+        display: none;
+    }
+
     [placeholder]:not(input):empty:before {
         content: attr(placeholder);
     }

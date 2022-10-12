@@ -2,47 +2,70 @@
     <block class="-isauth height-100pct justify-content-center">
         <section class="padding-y-50px max-height-100pct-minus-120px" data-max-height="calc(100% - 120px)">
             <picture class="display-flex flex-grow-1 height-100pct position-fixed top-0 width-100pct" data-backdrop-filter="blur(10px)" data-background-color="rgba(0,0,0,0.5)" data-href="/:get/:get/"></picture>
-            <card class="background-color-fff border-radius-10px margin-auto width-300px">
-                <header>
+            <card class="background-color-fff border-radius-10px margin-auto padding-10px width-425px">
+                <header class="margin-bottom-20px">
                     <box>
-                        <column>
-                            <text placeholder="Plan Type"></text>
-                            <text placeholder="Plan Description"></text>
-                        </columnn>
+                        <column data-path="/plans/plus/pay/">
+                            <text class="font-size-30px font-weight-bolder line-height-36px" placeholder="Plan Type">Plus Plan</text>
+                            <text class="font-size-18px line-height-24px" placeholder="Plan Description">Engage with a community and share content accross your accounts.</text>
+                        </column>
+                        <column data-path="/plans/pro/pay/">
+                            <text class="font-size-30px font-weight-bolder line-height-36px" placeholder="Plan Type">Pro Plan</text>
+                            <text class="font-size-18px line-height-24px" placeholder="Plan Description"></text>
+                        </column>
+                        <column data-path="/plans/max/pay/">
+                            <text class="font-size-30px font-weight-bolder line-height-36px" placeholder="Plan Type">Max Plan</text>
+                            <text class="font-size-18px line-height-24px" placeholder="Plan Description"></text>
+                        </column>
                     </box>
                 </header>
-                <form class="border-radius-20px direction-column flex-unset font-size-13px margin-x-auto noauth order-2 padding-y-10px width-300px" id="my-login" onsubmit="controller.my.login(event)">
-                    <box>
-                        <text>Card Number</text>
+                <form class="border-radius-20px direction-column flex-unset font-size-13px margin-top-20px margin-x-auto noauth order-2 width-100pct" id="my-login" onsubmit="controller.my.login(event)">
+                    <box class="border-radius-10px height-50px line-height-50px margin-bottom-20px" data-box-shadow="0 1px 6px rgb(32 33 36 / 28%)">
+                        <text class="color-bbb padding-x-20px">Card Number</text>
+                        <row>
+                            <StripeElement></StripeElement>
+                        </row>
+                    </box>
+                    <box class="border-radius-10px height-50px line-height-50px margin-bottom-20px" data-box-shadow="0 1px 6px rgb(32 33 36 / 28%)">
+                        <text class="color-bbb padding-x-20px">Cardholder Name</text>
+                        <row>
+                            <StripeElement></StripeElement>
+                        </row>
+                    </box>
+                    <box class="border-radius-10px display-inline-flex height-50px line-height-50px margin-bottom-20px margin-right-20px" data-box-shadow="0 1px 6px rgb(32 33 36 / 28%)" data-width="calc((100% - 100px)/2)">
+                        <text class="color-bbb padding-x-20px">Expiration Date</text>
+                        <row>
+                            <StripeElement></StripeElement>
+                        </row>
+                    </box>
+                    <box class="border-radius-10px display-inline-flex height-50px line-height-50px" data-box-shadow="0 1px 6px rgb(32 33 36 / 28%)" data-width="calc((100% - 100px)/2)">
+                        <text class="color-bbb padding-x-20px">Security Code</text>
                         <row>
                             <StripeElement></StripeElement>
                         </row>
                     </box>
                     <box>
-                        <text>Cardholder Name</text>
                         <row>
-                            <StripeElement></StripeElement>
-                        </row>
-                    </box>
-                    <box>
-                        <text>Expiration Date</text>
-                        <row>
-                            <StripeElement></StripeElement>
-                        </row>
-                    </box>
-                    <box>
-                        <text>Security Code</text>
-                        <row>
-                            <StripeElement></StripeElement>
-                        </row>
-                    </box>
-                    <box>
-                        <row>
-                            <input disabled type="submit" value="Save Card">
+                            <input class="background-color-0096c7 border-radius-10px color-fff line-height-50px margin-left-auto opacity-50pct padding-x-20px" disabled type="submit" value="Save Card">
                         </row>
                     </box>
                 </form>
-                <section>
+                <section class="padding-top-63pct position-relative width-100pct" data-font-family="Courier New">
+                    <box class="background-color-000 border-radius-10px height-100pct position-absolute top-0 width-100pct">
+                        <row class="bottom-0 height-30px left-0 margin-auto right-0 top-0">
+                            <input class="font-size-28px letter-spacing-2px text-align-center width-100pct" data-mobile-font-size="calc((100vw - 20px)*0.06)" data-mobile-letter-spacing="0.5vw" onkeydown="on.keydown.card.number(event)" placeholder="•••• •••• •••• ••••" type="text">
+                        </row>
+                        <row class="bottom-20px color-fff height-30px left-20px margin-auto position-absolute right-0">
+                            <div class="margin-right-5px" placeholder="Firstname"></div>
+                            <div placeholder="Lastname"></div>
+                        </row>
+                        <row class="bottom-20px color-fff height-30px margin-auto right-20px position-absolute right-0">
+                            <text class="font-size-9px margin-right-10px white-space-pre-wrap">Valid<br>Thru</text>
+                            <div class="margin-right-5px" placeholder="01"></div>
+                            <text>/</text>
+                            <div placeholder="23"></div>
+                        </row>
+                    </box>
                     <box></box>
                 </section>
             </card>
