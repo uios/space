@@ -22,28 +22,30 @@
                 <form class="border-radius-20px direction-column flex-unset font-size-13px margin-top-20px margin-x-auto noauth order-2 width-100pct" id="my-login" onsubmit="controller.my.login(event)">
                     <box class="border-radius-10px height-50px line-height-50px margin-bottom-20px" data-box-shadow="0 1px 6px rgb(32 33 36 / 28%)">
                         <text class="color-bbb padding-x-20px">Card Number</text>
-                        <row>
+                        <row class="height-100pct left-0 position-absolute top-0 width-100pct">
                             <StripeElement></StripeElement>
                         </row>
                     </box>
                     <box class="border-radius-10px height-50px line-height-50px margin-bottom-20px" data-box-shadow="0 1px 6px rgb(32 33 36 / 28%)">
                         <text class="color-bbb padding-x-20px">Cardholder Name</text>
-                        <row>
+                        <row class="height-100pct left-0 position-absolute top-0 width-100pct">
                             <StripeElement></StripeElement>
                         </row>
                     </box>
-                    <box class="border-radius-10px display-inline-flex height-50px line-height-50px margin-bottom-20px margin-right-20px" data-box-shadow="0 1px 6px rgb(32 33 36 / 28%)" data-width="calc((100% - 100px)/2)">
-                        <text class="color-bbb padding-x-20px">Expiration Date</text>
-                        <row>
-                            <StripeElement></StripeElement>
-                        </row>
-                    </box>
-                    <box class="border-radius-10px display-inline-flex height-50px line-height-50px" data-box-shadow="0 1px 6px rgb(32 33 36 / 28%)" data-width="calc((100% - 100px)/2)">
-                        <text class="color-bbb padding-x-20px">Security Code</text>
-                        <row>
-                            <StripeElement></StripeElement>
-                        </row>
-                    </box>
+                    <row>
+                        <box class="border-radius-10px display-inline-flex height-50px line-height-50px margin-bottom-20px margin-right-20px" data-box-shadow="0 1px 6px rgb(32 33 36 / 28%)" data-width="calc((100% - 100px)/2)">
+                            <text class="color-bbb padding-x-20px">Expiration Date</text>
+                            <row class="height-100pct left-0 position-absolute top-0 width-100pct">
+                                <StripeElement></StripeElement>
+                            </row>
+                        </box>
+                        <box class="border-radius-10px display-inline-flex height-50px line-height-50px" data-box-shadow="0 1px 6px rgb(32 33 36 / 28%)" data-width="calc((100% - 100px)/2)">
+                            <text class="color-bbb padding-x-20px">Security Code</text>
+                            <row class="height-100pct left-0 position-absolute top-0 width-100pct">
+                                <StripeElement></StripeElement>
+                            </row>
+                        </box>
+                    </row>
                     <box>
                         <row>
                             <input class="background-color-0096c7 border-radius-10px color-fff line-height-50px margin-left-auto opacity-50pct padding-x-20px" disabled type="submit" value="Save Card">
@@ -51,7 +53,7 @@
                     </box>
                 </form>
                 <section class="padding-top-63pct position-relative width-100pct" data-font-family="Courier New">
-                    <box class="background-color-000 border-radius-10px height-100pct position-absolute top-0 width-100pct">
+                    <box class="background-color-26 border-radius-10px height-100pct position-absolute top-0 width-100pct">
                         <row class="bottom-0 height-30px left-0 margin-auto right-0 top-0">
                             <input class="font-size-28px letter-spacing-2px text-align-center width-100pct" data-mobile-font-size="calc((100vw - 20px)*0.06)" data-mobile-letter-spacing="0.5vw" onkeydown="on.keydown.card.number(event)" placeholder="•••• •••• •••• ••••" type="text">
                         </row>
@@ -60,7 +62,10 @@
                             <div placeholder="Lastname"></div>
                         </row>
                         <row class="bottom-20px color-fff height-30px margin-auto right-20px position-absolute right-0">
-                            <text class="font-size-9px margin-right-10px white-space-pre-wrap">Valid<br>Thru</text>
+                            <text class="font-size-9px margin-right-10px white-space-pre-wrap">
+                                Valid<br>Thru
+                            
+                            </text>
                             <div class="margin-right-5px" placeholder="01"></div>
                             <text>/</text>
                             <div placeholder="23"></div>

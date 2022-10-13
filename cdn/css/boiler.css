@@ -32,6 +32,10 @@
         background-color: #1a73e8;
     }
 
+    .background-color-26 {
+        background-color: #262626;
+    }
+
     .background-color-777 {
         background-color: #777;
     }
@@ -410,6 +414,10 @@
         height: 10px;
     }
 
+    .height-18px {
+        height: 18px;
+    }
+
     .height-20px {
         height: 20px;
     }
@@ -502,6 +510,10 @@
 
 /*LINE HEIGHT*/
 @media screen {
+    .line-height-18px {
+        line-height: 18px;    
+    }
+    
     .line-height-36px {
         line-height: 36px;
     }
@@ -894,6 +906,10 @@
 
     [data-transform="translateX(100%)"] {
         transform: translateX(100%);
+    }
+
+    [data-transform="translate3d(0,-50%,0)"] {
+        transform: translate3d(0,-50%,0)        
     }
 
     @media (max-width: 960px) {

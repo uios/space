@@ -47,6 +47,165 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                             var target = vp.find('footer').all('box')[2];
                             controller.plans.select(target);
                         }
+
+                        if (1 > 0) {
+                            var ppp = dom.body.find('[data-page="/plans/*/pay/"]');
+                            var form = ppp.find('form');
+                            var card = form.nextElementSibling;
+                            var stripe = Stripe("pk_test_51I8VnsEfZ5B88flNfqLHg5rtUlUl92CPKN3EeXIgdvp4QfSrXPSpMgZxeMgGygsFOOd5diO4eDLxzBgi6oXGZsK2006vuoo3Ey");
+                            let elements = stripe.elements({
+                                fonts: [{
+                                    cssSrc: 'https://fonts.googleapis.com/css?family=Nunito'
+                                }]
+                            });
+
+                            var style = {
+                                base: {
+                                    fontFamily: 'Nunito',
+                                    lineHeight: '50px',
+                                    padding: '0 20px',
+                                    opacity: 0,
+                                    fontSize: '18px'
+                                },
+                                complete: {},
+                                empty: {
+                                    fontSize: '0',
+                                    ':focus': {
+                                        fontSize: '18px'
+                                    }
+                                },
+                                invalid: {
+                                    color: '#ff3b30'
+                                }
+                            };
+
+                            let cardNumber = elements.create('cardNumber', {
+                                style
+                            });
+                            cardNumber.mount(form.all('box')[0].find('StripeElement'));
+                            cardNumber.on('change', e=>validate(e));
+                            cardNumber.addEventListener('focus', e=>{
+                                const text = form.all('box')[0].find('text');
+                                text.className = "background-color-fff color-bbb height-18px line-height-18px padding-x-20px position-absolute";
+                                text.dataset.transform = "translate3d(0,-50%,0)";
+                            }
+                            );
+                            cardNumber.addEventListener('blur', e=>{
+                                const text = form.all('box')[0].find('text');
+                                text.className = "color-bbb padding-x-20px";
+                                text.removeAttribute('data-transform');
+                            }
+                            );
+                            cardNumber.on('ready', e=>{
+                                ppp.classList.add('cardNumber--ready')
+                            }
+                            );
+
+                            let cardExpiry = elements.create('cardExpiry', {
+                                style
+                            });
+                            cardExpiry.mount(form.all('box')[2].find('StripeElement'));
+                            cardExpiry.on('change', e=>validate(e));
+                            cardExpiry.on('focus', e=>{
+                                const text = form.all('box')[2].find('text');
+                                text.className = "background-color-fff color-bbb height-18px line-height-18px padding-x-20px position-absolute";
+                                text.dataset.transform = "translate3d(0,-50%,0)";
+                            }
+                            );
+                            cardExpiry.on('blur', e=>{
+                                const text = form.all('box')[2].find('text');
+                                text.className = "color-bbb padding-x-20px";
+                                text.removeAttribute('data-transform');
+                            }
+                            );
+                            cardExpiry.on('ready', e=>{
+                                ppp.classList.add('cardExpiry--ready')
+                            }
+                            );
+
+                            let cardCvc = elements.create('cardCvc', {
+                                style
+                            });
+                            cardCvc.mount(form.all('box')[3].find('StripeElement'));
+                            cardCvc.on('change', e=>validate(e));
+                            cardCvc.on('focus', e=>{
+                                card.dataset.side = "back";
+                                const text = form.all('box')[3].find('text');
+                                text.className = "background-color-fff color-bbb height-18px line-height-18px padding-x-20px position-absolute";
+                                text.dataset.transform = "translate3d(0,-50%,0)";
+                            }
+                            );
+                            cardCvc.on('blur', e=>{
+                                card.dataset.side = "front";
+                                const text = form.all('box')[3].find('text');
+                                text.className = "color-bbb padding-x-20px";
+                                text.removeAttribute('data-transform');
+                            }
+                            );
+                            cardCvc.on('ready', e=>{
+                                ppp.classList.add('cardCvc--ready')
+                            }
+                            );
+
+                            function validate(e) {
+                                //console.log({e});
+                                var save = form.find('.save-card');
+                                if (e.complete === true) {
+                                    if ('complete',
+                                    form.all('.StripeElement').length === form.all('.StripeElement--complete').length + 1) {
+                                        console.log('validated');
+                                        save.classList.remove('disabled');
+                                        form.find('[type="submit"]').disabled = false;
+                                    } else {
+                                        console.log('invalidated');
+                                        save.classList.add('disabled');
+                                        form.find('[type="submit"]').disabled = true;
+                                    }
+                                } else {
+                                    console.log('invalidated');
+                                    save.classList.add('disabled');
+                                    form.find('[type="submit"]').disabled = true;
+                                }
+                            }
+
+                            form.addEventListener('submit', e=>{
+                                e.preventDefault();
+                                stripe.createPaymentMethod({
+                                    type: 'card',
+                                    card: cardNumber,
+                                    billing_details: {
+                                        name: e.target.find('.card-holder input').value,
+                                    }
+                                }).then(async(result)=>{
+                                    console.log('subscription', result);
+                                    if (result.error) {
+                                        console.log(result.error);
+                                    } else {
+                                        var jwt = await auth.getIdToken();
+                                        var paymentMethodId = result.paymentMethod.id;
+                                        var data = {
+                                            jwt,
+                                            paymentMethodId,
+                                            priceId
+                                        };
+                                        api.stripe.subscription.create(data).then((e)=>{
+                                            alert('Plan Created');
+                                            modal.remove();
+                                        }
+                                        ).catch((e)=>{
+                                            console.log('error', {
+                                                e
+                                            });
+                                            alert('There was an error creating your plan');
+                                        }
+                                        );
+                                    }
+                                }
+                                );
+                            }
+                            );
+                        }
+
                     } else {
                         if (get[1] === "plus") {
                             var target = vp.find('footer').all('box')[0];
