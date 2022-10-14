@@ -53,9 +53,9 @@
                     </box>
                 </form>
                 <section class="padding-top-63pct position-relative width-100pct" data-font-family="Courier New">
-                    <box class="background-color-26 border-radius-10px height-100pct position-absolute top-0 width-100pct">
-                        <row class="bottom-0 height-30px left-0 margin-auto right-0 top-0">
-                            <input class="font-size-28px letter-spacing-2px text-align-center width-100pct" data-mobile-font-size="calc((100vw - 20px)*0.06)" data-mobile-letter-spacing="0.5vw" onkeydown="on.keydown.card.number(event)" placeholder="•••• •••• •••• ••••" type="text">
+                    <box class="backface-visibility-hidden background-color-26 border-radius-10px height-100pct position-absolute top-0 transform-style-preserve3d -webkit-transform-style-presereve-3d width-100pct" data-transition="all 0.4s">
+                        <row class="bottom-0 height-30px left-0 margin-auto right-0 top-0 width-100pct">
+                            <input class="font-size-28px font-weight-bolder letter-spacing-2px text-align-center width-100pct" data-font-family="Courier New" data-mobile-font-size="calc((100vw - 20px)*0.06)" data-mobile-letter-spacing="0.5vw" disabled onkeydown="on.keydown.card.number(event)" placeholder="•••• •••• •••• ••••" type="text">
                         </row>
                         <row class="bottom-20px color-fff height-30px left-20px margin-auto position-absolute right-0">
                             <div class="margin-right-5px" placeholder="Firstname"></div>
@@ -63,15 +63,23 @@
                         </row>
                         <row class="bottom-20px color-fff height-30px margin-auto right-20px position-absolute right-0">
                             <text class="font-size-9px margin-right-10px white-space-pre-wrap">
-                                Valid<br>Thru
-                            
+                                <span>Valid</span>
+                                <br>
+                                <span>Thru</span>
                             </text>
                             <div class="margin-right-5px" placeholder="01"></div>
                             <text>/</text>
                             <div placeholder="23"></div>
                         </row>
                     </box>
-                    <box></box>
+                    <box class="backface-visibility-hidden background-color-26 border-radius-10px height-100pct position-absolute top-0 transform-style-preserve3d -webkit-transform-style-presereve-3d width-100pct" data-transform="rotateY(180deg)" data-transition="all 0.4s">
+                        <picture class="background-color-000 height-20pct position-absolute top-8pct width-100pct"></picture>
+                        <column class="color-fff font-size-13px height-20pct justify-content-space-between max-width-50px position-absolute right-20px text-align-right top-36pct">
+                            <text>CVC</text>
+                            <input class="font-size-18px text-align-right width-32px" placeholder="123" type="number">
+                        </column>
+                        <picture class="background-color-fff height-20pct left-10px position-absolute top-36pct" data-width="calc(100% - 100px)"></picture>
+                    </box>
                 </section>
             </card>
         </section>

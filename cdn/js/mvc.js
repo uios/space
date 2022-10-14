@@ -187,7 +187,8 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                             }
                             );
                             cardCvc.on('focus', e=>{
-                                card.dataset.side = "back";
+                                form.nextElementSibling.children[0].dataset.transform = "rotateY(180deg)";
+                                form.nextElementSibling.children[1].dataset.transform = "rotateY(0)";
                                 const el = form.all('box')[3].find('StripeElement');
                                 const text = form.all('box')[3].find('text');
                                 text.className = "background-color-fff color-bbb height-18px line-height-18px padding-x-20px position-absolute";
@@ -199,7 +200,8 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                             }
                             );
                             cardCvc.on('blur', e=>{
-                                card.dataset.side = "front";
+                                form.nextElementSibling.children[0].dataset.transform = "rotateY(0)";
+                                form.nextElementSibling.children[1].dataset.transform = "rotateY(180deg)";
                                 const el = form.all('box')[3].find('StripeElement');
                                 const text = form.all('box')[3].find('text');
                                 if (el.classList.contains('StripeElement--invalid')) {
