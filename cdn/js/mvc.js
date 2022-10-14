@@ -83,17 +83,40 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                                 style
                             });
                             cardNumber.mount(form.all('box')[0].find('StripeElement'));
-                            cardNumber.on('change', e=>validate(e));
+                            cardNumber.on('change', e=>{
+                                validate(e)
+                                const text = form.all('box')[0].find('text');
+                                if (e.error) {
+                                    console.log("cardNumber error");
+                                    text.className = "background-color-fff color-ff3b30 height-18px line-height-18px padding-x-20px position-absolute";
+                                    text.dataset.transform = "translate3d(0,-50%,0)";
+                                } else {
+                                    text.className = "background-color-fff color-bbb height-18px line-height-18px padding-x-20px position-absolute";
+                                    text.dataset.transform = "translate3d(0,-50%,0)";
+                                }
+                            }
+                            );
                             cardNumber.addEventListener('focus', e=>{
+                                const el = form.all('box')[0].find('StripeElement');
                                 const text = form.all('box')[0].find('text');
                                 text.className = "background-color-fff color-bbb height-18px line-height-18px padding-x-20px position-absolute";
                                 text.dataset.transform = "translate3d(0,-50%,0)";
+                                if (el.classList.contains('StripeElement--invalid')) {
+                                    text.classList.remove('color-bbb')
+                                    text.classList.add('color-ff3b30')
+                                }
                             }
                             );
                             cardNumber.addEventListener('blur', e=>{
+                                const el = form.all('box')[0].find('StripeElement');
                                 const text = form.all('box')[0].find('text');
-                                text.className = "color-bbb padding-x-20px";
-                                text.removeAttribute('data-transform');
+                                if (el.classList.contains('StripeElement--invalid')) {
+                                    text.className = "background-color-fff color-ff3b30 height-18px line-height-18px padding-x-20px position-absolute";
+                                    text.dataset.transform = "translate3d(0,-50%,0)";
+                                } else {
+                                    text.className = "color-bbb padding-x-20px";
+                                    text.removeAttribute('data-transform');
+                                }
                             }
                             );
                             cardNumber.on('ready', e=>{
@@ -105,17 +128,40 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                                 style
                             });
                             cardExpiry.mount(form.all('box')[2].find('StripeElement'));
-                            cardExpiry.on('change', e=>validate(e));
+                            cardExpiry.on('change', e=>{
+                                validate(e)
+                                const text = form.all('box')[2].find('text');
+                                if (e.error) {
+                                    console.log("cardNumber error");
+                                    text.className = "background-color-fff color-ff3b30 height-18px line-height-18px padding-x-20px position-absolute";
+                                    text.dataset.transform = "translate3d(0,-50%,0)";
+                                } else {
+                                    text.className = "background-color-fff color-bbb height-18px line-height-18px padding-x-20px position-absolute";
+                                    text.dataset.transform = "translate3d(0,-50%,0)";
+                                }
+                            }
+                            );
                             cardExpiry.on('focus', e=>{
+                                const el = form.all('box')[2].find('StripeElement');
                                 const text = form.all('box')[2].find('text');
                                 text.className = "background-color-fff color-bbb height-18px line-height-18px padding-x-20px position-absolute";
                                 text.dataset.transform = "translate3d(0,-50%,0)";
+                                if (el.classList.contains('StripeElement--invalid')) {
+                                    text.classList.remove('color-bbb')
+                                    text.classList.add('color-ff3b30')
+                                }
                             }
                             );
                             cardExpiry.on('blur', e=>{
+                                const el = form.all('box')[2].find('StripeElement');
                                 const text = form.all('box')[2].find('text');
-                                text.className = "color-bbb padding-x-20px";
-                                text.removeAttribute('data-transform');
+                                if (el.classList.contains('StripeElement--invalid')) {
+                                    text.className = "background-color-fff color-ff3b30 height-18px line-height-18px padding-x-20px position-absolute";
+                                    text.dataset.transform = "translate3d(0,-50%,0)";
+                                } else {
+                                    text.className = "color-bbb padding-x-20px";
+                                    text.removeAttribute('data-transform');
+                                }
                             }
                             );
                             cardExpiry.on('ready', e=>{
@@ -127,19 +173,42 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                                 style
                             });
                             cardCvc.mount(form.all('box')[3].find('StripeElement'));
-                            cardCvc.on('change', e=>validate(e));
+                            cardCvc.on('change', e=>{
+                                validate(e)
+                                const text = form.all('box')[3].find('text');
+                                if (e.error) {
+                                    console.log("cardNumber error");
+                                    text.className = "background-color-fff color-ff3b30 height-18px line-height-18px padding-x-20px position-absolute";
+                                    text.dataset.transform = "translate3d(0,-50%,0)";
+                                } else {
+                                    text.className = "background-color-fff color-bbb height-18px line-height-18px padding-x-20px position-absolute";
+                                    text.dataset.transform = "translate3d(0,-50%,0)";
+                                }
+                            }
+                            );
                             cardCvc.on('focus', e=>{
                                 card.dataset.side = "back";
+                                const el = form.all('box')[3].find('StripeElement');
                                 const text = form.all('box')[3].find('text');
                                 text.className = "background-color-fff color-bbb height-18px line-height-18px padding-x-20px position-absolute";
                                 text.dataset.transform = "translate3d(0,-50%,0)";
+                                if (el.classList.contains('StripeElement--invalid')) {
+                                    text.classList.remove('color-bbb')
+                                    text.classList.add('color-ff3b30')
+                                }
                             }
                             );
                             cardCvc.on('blur', e=>{
                                 card.dataset.side = "front";
+                                const el = form.all('box')[3].find('StripeElement');
                                 const text = form.all('box')[3].find('text');
-                                text.className = "color-bbb padding-x-20px";
-                                text.removeAttribute('data-transform');
+                                if (el.classList.contains('StripeElement--invalid')) {
+                                    text.className = "background-color-fff color-ff3b30 height-18px line-height-18px padding-x-20px position-absolute";
+                                    text.dataset.transform = "translate3d(0,-50%,0)";
+                                } else {
+                                    text.className = "color-bbb padding-x-20px";
+                                    text.removeAttribute('data-transform');
+                                }
                             }
                             );
                             cardCvc.on('ready', e=>{
@@ -148,23 +217,25 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                             );
 
                             function validate(e) {
-                                //console.log({e});
-                                var save = form.find('.save-card');
+                                console.log({
+                                    e
+                                });
+                                var save = form.find('[type="submit"]');
                                 if (e.complete === true) {
                                     if ('complete',
                                     form.all('.StripeElement').length === form.all('.StripeElement--complete').length + 1) {
                                         console.log('validated');
-                                        save.classList.remove('disabled');
-                                        form.find('[type="submit"]').disabled = false;
+                                        save.classList.remove('opacity-50pct');
+                                        save.disabled = false;
                                     } else {
                                         console.log('invalidated');
-                                        save.classList.add('disabled');
-                                        form.find('[type="submit"]').disabled = true;
+                                        save.classList.add('opacity-50pct');
+                                        save.disabled = true;
                                     }
                                 } else {
                                     console.log('invalidated');
-                                    save.classList.add('disabled');
-                                    form.find('[type="submit"]').disabled = true;
+                                    save.classList.add('opacity-50pct');
+                                    save.disabled = true;
                                 }
                             }
 
