@@ -1,8 +1,12 @@
 <blocks>
     <block class="-isauth height-100pct justify-content-center">
         <section class="padding-y-50px max-height-100pct-minus-120px" data-max-height="calc(100% - 120px)">
-            <picture class="display-flex flex-grow-1 height-100pct position-fixed top-0 width-100pct" data-backdrop-filter="blur(10px)" data-background-color="rgba(0,0,0,0.5)" data-href="/:get/:get/"></picture>
-            <card class="background-color-fff border-radius-10px margin-auto padding-10px width-425px">
+            <picture class="display-flex flex-grow-1 height-100pct position-fixed top-0 width-100pct" data-backdrop-filter="blur(10px)" data-background-color="rgba(0,0,0,0.5)" data-href="/:get/:get/">
+                <ico class="bottom-0 left-0 margin-auto right-0 position-absolute top-0" data-transform="scale(5)">
+                    <n class="icon-spinner"></n>
+                </ico>
+            </picture>
+            <card class="background-color-fff border-radius-10px empty-state margin-auto padding-10px width-425px">
                 <header class="margin-bottom-20px">
                     <box>
                         <column data-path="/plans/plus/pay/">
@@ -29,7 +33,7 @@
                     <box class="border-radius-10px height-50px line-height-50px margin-bottom-20px" data-box-shadow="0 1px 6px rgb(32 33 36 / 28%)">
                         <text class="color-bbb padding-x-20px">Cardholder Name</text>
                         <row class="height-100pct left-0 position-absolute right-0 top-0 width-100pct">
-                            <StripeElement class="padding-x-20px"></StripeElement>
+                            <input class="opacity-0 padding-x-20px" onfocusin="on.focus.in.card.holder(event);" onfocusout="on.focus.out.card.holder(event);" onkeyup="on.key.up.card.holder(event)" placeholder="Firstname Lastname" type="text">
                         </row>
                     </box>
                     <row>

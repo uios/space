@@ -47,21 +47,15 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                             var target = vp.find('footer').all('box')[2];
                             controller.plans.select(target);
                         }
-
-                        if (1 > 0) {
-                            var ppp = dom.body.find('[data-page="/plans/*/pay/"]');
+                        var ppp = dom.body.find('[data-page="/plans/*/pay/"]');
+                        if (ppp.all('StripeElement:empty').length > 0) {
                             var form = ppp.find('form');
                             var card = form.nextElementSibling;
                             var stripe = Stripe("pk_test_51I8VnsEfZ5B88flNfqLHg5rtUlUl92CPKN3EeXIgdvp4QfSrXPSpMgZxeMgGygsFOOd5diO4eDLxzBgi6oXGZsK2006vuoo3Ey");
-                            let elements = stripe.elements({
-                                fonts: [{
-                                    cssSrc: 'https://fonts.googleapis.com/css?family=Nunito'
-                                }]
-                            });
+                            let elements = stripe.elements();
 
                             var style = {
                                 base: {
-                                    fontFamily: 'Nunito',
                                     lineHeight: '50px',
                                     padding: '0 20px',
                                     opacity: 0,
@@ -78,6 +72,8 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                                     color: '#ff3b30'
                                 }
                             };
+
+                            var inputs = ["cardNumber", "cardExpiry", "cardCvc"];
 
                             let cardNumber = elements.create('cardNumber', {
                                 style
@@ -113,6 +109,9 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                                 if (el.classList.contains('StripeElement--invalid')) {
                                     text.className = "background-color-fff color-ff3b30 height-18px line-height-18px padding-x-20px position-absolute";
                                     text.dataset.transform = "translate3d(0,-50%,0)";
+                                } else if (el.classList.contains('StripeElement--complete')) {
+                                    text.className = "background-color-fff color-bbb height-18px line-height-18px padding-x-20px position-absolute";
+                                    text.dataset.transform = "translate3d(0,-50%,0)";
                                 } else {
                                     text.className = "color-bbb padding-x-20px";
                                     text.removeAttribute('data-transform');
@@ -121,6 +120,10 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                             );
                             cardNumber.on('ready', e=>{
                                 ppp.classList.add('cardNumber--ready')
+                                inputs = inputs.filter(function(e) {
+                                    return e !== 'cardNumber'
+                                })
+                                inputs.length === 0 ? display('cardNumber') : null;
                             }
                             );
 
@@ -158,6 +161,9 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                                 if (el.classList.contains('StripeElement--invalid')) {
                                     text.className = "background-color-fff color-ff3b30 height-18px line-height-18px padding-x-20px position-absolute";
                                     text.dataset.transform = "translate3d(0,-50%,0)";
+                                } else if (el.classList.contains('StripeElement--complete')) {
+                                    text.className = "background-color-fff color-bbb height-18px line-height-18px padding-x-20px position-absolute";
+                                    text.dataset.transform = "translate3d(0,-50%,0)";
                                 } else {
                                     text.className = "color-bbb padding-x-20px";
                                     text.removeAttribute('data-transform');
@@ -166,6 +172,10 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                             );
                             cardExpiry.on('ready', e=>{
                                 ppp.classList.add('cardExpiry--ready')
+                                inputs = inputs.filter(function(e) {
+                                    return e !== 'cardExpiry'
+                                })
+                                inputs.length === 0 ? display('cardExpiry') : null;
                             }
                             );
 
@@ -207,6 +217,9 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                                 if (el.classList.contains('StripeElement--invalid')) {
                                     text.className = "background-color-fff color-ff3b30 height-18px line-height-18px padding-x-20px position-absolute";
                                     text.dataset.transform = "translate3d(0,-50%,0)";
+                                } else if (el.classList.contains('StripeElement--complete')) {
+                                    text.className = "background-color-fff color-bbb height-18px line-height-18px padding-x-20px position-absolute";
+                                    text.dataset.transform = "translate3d(0,-50%,0)";
                                 } else {
                                     text.className = "color-bbb padding-x-20px";
                                     text.removeAttribute('data-transform');
@@ -215,8 +228,16 @@ window.mvc.v ? null : (window.mvc.v = view = function(route) {
                             );
                             cardCvc.on('ready', e=>{
                                 ppp.classList.add('cardCvc--ready')
+                                inputs = inputs.filter(function(e) {
+                                    return e !== 'cardCvc'
+                                })
+                                inputs.length === 0 ? display('cardCvc') : null;
                             }
                             );
+
+                            function display() {
+                                ppp.find('picture').innerHTML = "";
+                            }
 
                             function validate(e) {
                                 console.log({
@@ -324,7 +345,6 @@ window.mvc.c ? null : (window.mvc.c = controller = {
         close: ()=>{
 
             const nav = dom.body.find('body > nav');
-            console.log(nav.dataset);
             nav.dataset["960pxTransform"] = "translateX(-100%)";
             nav.firstElementChild.classList.add('display-none');
 
